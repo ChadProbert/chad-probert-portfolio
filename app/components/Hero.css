@@ -1,0 +1,8 @@
+.profile-picture {
+    background-color: var(--background-color);
+}
+
+.call-to-action:hover {
+    background: var(--hover-background-color);
+    color: var(--hover-foreground-color);
+}
