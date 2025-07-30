@@ -1,15 +1,19 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
-import About from "./components/About"
+import About from "./components/About";
+import RotatingCube from "./components/RotatingCube";
 
 export default function Home() {
   return (
-    <div className="">  
+    <div className="">
       <Navbar />
       <main className="">
         <div className="blur-overlay"></div>
-        <Hero />
+        <RotatingCube />
+        <div className="mt-65">
+          <Hero />
+        </div>
         <About />
       </main>
       <Footer />

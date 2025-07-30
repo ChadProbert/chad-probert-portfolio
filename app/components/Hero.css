@@ -1,8 +1,13 @@
-.profile-picture {
-    background-color: var(--background-color);
+.call-to-action {
+  background-color: var(--button-color);
+  color: var(--foreground);
 }
 
 .call-to-action:hover {
-    background: var(--hover-background-color);
-    color: var(--hover-foreground-color);
+  background: var(--hover-background-color);
+  color: var(--hover-foreground-color);
+}
+
+.availability {
+  background-color: var(--background);
 }
