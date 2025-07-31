@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect } from "react";
 import * as THREE from "three";
+import "./RotatingCube.css";
 
 export default function RotatingCube() {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -9,6 +10,33 @@ export default function RotatingCube() {
   useEffect(() => {
     // Set up scene
     const scene = new THREE.Scene();
+
+    // Create a buffer of random star positions
+    const starCount = 1000;
+    const positions = new Float32Array(starCount * 3);
+    for (let i = 0; i < starCount * 3; i++) {
+      // spread stars in a cube of size 600 around the origin
+      positions[i] = THREE.MathUtils.randFloatSpread(600);
+    }
+
+    // Build the geometry + material
+    const starGeometry = new THREE.BufferGeometry();
+    starGeometry.setAttribute(
+      "position",
+      new THREE.BufferAttribute(positions, 3)
+    );
+
+    const starMaterial = new THREE.PointsMaterial({
+      color: 0xffffff,
+      size: 0.5,
+      sizeAttenuation: true,
+      transparent: true,
+      opacity: 0.8,
+    });
+
+    // Create the Points object and add to scene
+    const stars = new THREE.Points(starGeometry, starMaterial);
+    scene.add(stars);
 
     // Set up camera
     const width = mountRef.current?.clientWidth || 0;
@@ -42,6 +70,9 @@ export default function RotatingCube() {
       cube.rotation.x += 0.01;
       cube.rotation.y += 0.01;
 
+      stars.rotation.x += 0.001;
+      stars.rotation.y += 0.001;
+
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
     };
@@ -71,12 +102,13 @@ export default function RotatingCube() {
   return (
     <div
       ref={mountRef}
+      className="rotating-cube"
       style={{
         width: "100%",
         height: "400px",
         background: "transparent",
         position: "absolute",
-        top: 100,
+        top: 50,
         left: 0,
       }}
     />
