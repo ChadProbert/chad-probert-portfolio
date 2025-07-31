@@ -1,6 +1,6 @@
 .call-to-action {
   background-color: var(--button-color);
-  color: var(--foreground);
+  color: var(--button-text);
 }
 
 .call-to-action:hover {
