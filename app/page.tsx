@@ -6,9 +6,9 @@ import RotatingCube from "./components/RotatingCube";
 
 export default function Home() {
   return (
-    <div className="">
+    <div>
       <Navbar />
-      <main className="">
+      <main>
         <div className="blur-overlay"></div>
         <RotatingCube />
         <div className="mt-65">
