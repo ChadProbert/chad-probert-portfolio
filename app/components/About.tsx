@@ -1,15 +1,15 @@
 import "./About.css";
 
-export default function About() {
+export const About = () => {
   return (
-    <div className="about-container flex flex-col items-center justify-center  mx-auto w-full p-30">
+    <div className="about-container flex flex-col items-center justify-center mx-auto p-10 max-w-5xl mb-20 rounded-2xl border-2 border-neutral-900">
       <h2
         id="about"
         className="text-3xl font-bold sm:text-5xl dark:text-white mb-8"
       >
         About
       </h2>
-      <p className="text-center sm:text-lg max-w-5xl">
+      <p className="text-center sm:text-lg sm:max-w-3xl">
         I am a results-driven, hard-working, and highly ambitious software
         developer with 3+ years of experience building full-stack, user-centric
         web applications. My core tech stack is the MERN stack, and I am
@@ -20,4 +20,4 @@ export default function About() {
       </p>
     </div>
   );
-}
+};

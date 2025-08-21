@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { X, Menu } from "lucide-react";
-import ThemeToggleButton from "./ThemeToggleButton";
+import { ThemeToggleButton } from "./ThemeToggleButton";
 import "./Navbar.css";
 
 const navigation = [
@@ -14,36 +14,12 @@ const navigation = [
   { name: "Contact", href: "#contact" },
 ];
 
-export default function Navbar() {
+export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="absolute inset-x-0 top-0 z-50">
-      <nav className="flex items-center justify-between p-6 lg:px-8">
-        <div className="logo-container flex lg:flex-1">
-          <a href="#hero" className="-m-1.5 p-1.5">
-            <span className="sr-only">Chad Probert</span>
-            <svg
-              width="40"
-              height="40"
-              viewBox="0 0 40 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <text
-                x="50%"
-                y="65%"
-                textAnchor="middle"
-                fill="var(--foreground)"
-                fontSize="30"
-                fontWeight="bold"
-                fontFamily="sans-serif"
-              >
-                CP
-              </text>
-            </svg>
-          </a>
-        </div>
+    <header>
+      <nav className="flex items-center justify-between py-12 lg:px-8">
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -54,15 +30,14 @@ export default function Navbar() {
             <Menu aria-hidden="true" className="size-6" color="var(--foreground)" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="hidden lg:flex lg:gap-x-40">
           {navigation.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="text-sm/6 font-semibold"
+              className="text-xl font-semibold hover:cursor-pointer tracking-wider"
             >
-              <span className="sr-only">{item.name}</span>
-              {item.name}
+              <span className="sr-only">{item.name}</span>{item.name}
             </a>
           ))}
         </div>

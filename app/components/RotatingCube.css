@@ -1,6 +1,7 @@
 /* Tablet and Desktop */
 @media (min-width: 768px) {
   .rotating-cube {
-    top: 100 !important;
+    top: 95 !important;
+    left: 120 !important;
   }
 }
