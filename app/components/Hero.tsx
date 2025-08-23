@@ -8,8 +8,8 @@ export const Hero = () => {
       <div className="relative isolate pt-14">
         <div className="mx-auto py-16 sm:py-24 lg:py-32">
           <div className="text-left">
-            <h1 className="text-5xl font-semibold sm:text-8xl">Chad Probert</h1>
-            <p className="mt-8 mb-10 text-2xl font-normal text-pretty sm:text-5xl">
+            <h1 className="text-5xl font-semibold sm:text-8xl tracking-wide">Chad Probert</h1>
+            <p  className="mt-8 mb-10 text-2xl font-normal text-pretty sm:text-5xl">
               Web Developer
             </p>
 
