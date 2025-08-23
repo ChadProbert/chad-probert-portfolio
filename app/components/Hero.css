@@ -6,9 +6,6 @@
 .call-to-action:hover {
   background: var(--hover-background-color);
   color: var(--hover-foreground-color);
-}
-
-.availability {
-  color: var(--foreground);
-  border: 1px solid var(--availability-border);
+  /* raise the button higher when hovered over */
+  transform: translateY(-2px);
 }
