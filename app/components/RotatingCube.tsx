@@ -19,7 +19,7 @@ export const RotatingCube = () => {
     const width = mountRef.current?.clientWidth || 0;
     const height = mountRef.current?.clientHeight || 0;
     const camera = new PerspectiveCamera(75, width / height, 0.1, 1000);
-    camera.position.z = 5;
+    camera.position.z = 4;
 
     // Set up renderer
     const renderer = new WebGLRenderer({ antialias: true, alpha: true });
@@ -27,7 +27,7 @@ export const RotatingCube = () => {
     mountRef.current?.appendChild(renderer.domElement);
 
     // Defines the cube face properties
-    const geometry = new BoxGeometry(2.8, 2.8, 2.8);
+    const geometry = new BoxGeometry(2.2, 2.2, 2.2);
     const material = new MeshBasicMaterial({ color: 0xf1f1f1 });
     const cube = new Mesh(geometry, material);
     scene.add(cube);
@@ -43,8 +43,8 @@ export const RotatingCube = () => {
 
     // Animation loop
     const animate = () => {
-      // cube.rotation.x += 0.005;
-      // cube.rotation.y += 0.005;
+      cube.rotation.x += 0.005;
+      cube.rotation.y += 0.005;
 
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
@@ -70,12 +70,11 @@ export const RotatingCube = () => {
   return (
     <div
       ref={mountRef}
-      className="rotating-cube z-1"
+      className="rotating-cube"
       style={{
-        width: "100%",
-        height: "420px",
+        width: "320px",
+        height: "320px",
         background: "transparent",
-        position: "relative",
       }}
     />
   );
