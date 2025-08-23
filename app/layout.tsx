@@ -9,8 +9,8 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Chad Probert",
-  description: "Chad Probert's Developer Portfolio",
+  title: "Chad Probert |  Web Developer",
+  description: "Chad Probert's developer portfolio",
 };
 
 export default function RootLayout({
@@ -21,7 +21,6 @@ export default function RootLayout({
   return (
     <html lang="en">
      <body className={`${geist.className} ${geist.variable}`}>
-        <div className="blur-overlay"></div>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

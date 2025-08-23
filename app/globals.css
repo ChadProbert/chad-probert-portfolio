@@ -3,12 +3,12 @@
 :root {
   --background: #f1f1f1;
   --deep-background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
   --hover-background-color: #2c2c2c;
   --hover-foreground-color: #f1f1f1;
   --blur-inner: rgba(255, 255, 255, 0);
   --blur-outer: rgba(249, 249, 249, 1);
-  --button-color: #171717;
+  --button-color: #000000;
   --button-text: #f1f1f1;
   --availability-border: #cccccc;
 }
@@ -35,18 +35,4 @@ body {
   color: var(--foreground);
   background-color: var(--background);
   background-image: var(--background-image);
-}
-
-/* Applies a blur to the outer edges of the screen, above the background SVG */
-.blur-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background: radial-gradient(
-    circle at center,
-    var(--blur-inner) 0%,
-    var(--blur-outer) 100%
-  );
-  mix-blend-mode: var(--blur-mix-blend-mode, lighten);
-  pointer-events: none; /* Ensures that clicks pass through to elements below the blur */
 }
