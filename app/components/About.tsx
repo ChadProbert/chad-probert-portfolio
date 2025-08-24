@@ -1,16 +1,42 @@
+"use client";
 import Image from "next/image";
 import "./About.css";
+import { useEffect, useRef } from "react";
 
 export const About = () => {
+  // Scroll-triggered reveal
+  const revealRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = revealRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            // Once visible, we can stop observing to avoid retriggering
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { root: null, rootMargin: "0px", threshold: 0.2 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="mb-40">
+    <div className="mb-50">
       <h2
         id="about"
-        className="text-3xl font-bold sm:text-5xl dark:text-white mb-20 text-center tracking-wide"
+        className="text-3xl font-bold sm:text-5xl var(--foreground) mb-20 text-center tracking-wide"
       >
         About Me
       </h2>
-      <div className="flex items-center justify-center gap-6">
+      <div ref={revealRef} className="flex items-center justify-center gap-6 reveal-on-scroll">
         <div className="about-container flex flex-col items-center justify-center p-15 max-w-3xl rounded-3xl border-1 border-neutral-300">
           <div className="flex items-center justify-center gap-10">
             <Image

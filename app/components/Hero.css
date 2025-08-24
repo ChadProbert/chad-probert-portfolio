@@ -9,3 +9,31 @@
   /* raise the button higher when hovered over */
   transform: translateY(-2px);
 }
+
+.fade-in-5 {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Scroll-triggered reveal utility */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
