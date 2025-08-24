@@ -1,18 +1,39 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
+import emailjs from "emailjs-com";
 import { Send, Mail, Linkedin } from "lucide-react";
 
 export const Contact = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Message:", message);
+    setLoading(true);
+
+    const form = e.currentTarget;
+
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        form,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      )
+      .then(
+        () => {
+          setStatus("Message sent successfully! 🎉");
+          setLoading(false);
+          form.reset();
+        },
+        (error) => {
+          console.error(error);
+          setStatus("Failed to send message. Try again.");
+          setLoading(false);
+        }
+      );
   };
 
   return (
@@ -26,7 +47,7 @@ export const Contact = () => {
         </p>
 
         <div className="mt-10 rounded-2xl border p-6 sm:p-16 border-neutral-300">
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={sendEmail} className="space-y-5">
             <div>
               <label htmlFor="name" className="mb-1 block text-md font-medium">
                 Name
@@ -36,9 +57,8 @@ export const Contact = () => {
                 name="name"
                 type="text"
                 placeholder="Your name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="w-full rounded-md border px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-2 focus:ring-foreground/100 border-neutral-300 bg-[var(--input-background)]"
+                required
+                className="w-full rounded border px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-2 focus:ring-foreground/100 border-neutral-300 bg-[var(--input-background)]"
               />
             </div>
 
@@ -50,10 +70,9 @@ export const Contact = () => {
                 id="email"
                 name="email"
                 type="email"
-                placeholder="Your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full rounded-md border px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-2 focus:ring-foreground/100 border-neutral-300 bg-[var(--input-background)]"
+                placeholder="you@example.com"
+                required
+                className="w-full rounded border px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-2 focus:ring-foreground/100 border-neutral-300 bg-[var(--input-background)]"
               />
             </div>
 
@@ -67,35 +86,51 @@ export const Contact = () => {
               <textarea
                 id="message"
                 name="message"
-                rows={8}
-                placeholder="Type your message here..."
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                className="w-full resize-y rounded-md border px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-2 focus:ring-foreground/100 border-neutral-300 bg-[var(--input-background)]"
+                rows={5}
+                placeholder="What you got on your mind?"
+                required
+                className="w-full resize-y rounded border px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-2 focus:ring-foreground/100 border-neutral-300 bg-[var(--input-background)]"
               />
             </div>
 
-            <div className="flex items-center justify-end gap-3 pt-2">
-              <a
-                href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center rounded-md border px-3 py-2.5 text-md transition hover:bg-foreground/5 border-neutral-300"
-              >
-                <Linkedin className="mr-2 h-5 w-5" /> LinkedIn
-              </a>
-              <a
-                href="mailto:"
-                className="inline-flex items-center rounded-md border px-3 py-2.5 text-md transition hover:bg-foreground/5 border-neutral-300"
-              >
-                <Mail className="mr-2 h-5 w-5" /> Email
-              </a>
-              <button
-                type="submit"
-                className="inline-flex items-center rounded-md bg-foreground pl-5 pr-6 py-2.5 text-md font-semibold text-background transition hover:opacity-90 border-neutral-300"
-              >
-                <Send className="mr-1.5 h-5 w-5" /> Send
-              </button>
+            <div className="flex flex-col space-y-4 pt-2">
+              <div className="flex items-center justify-end gap-3">
+                <a
+                  href="https://www.linkedin.com/in/chad-probert-6421b321b/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center rounded-md border px-3 py-2.5 text-md transition hover:bg-foreground/5 border-neutral-300"
+                >
+                  <Linkedin className="mr-2 h-5 w-5" /> LinkedIn
+                </a>
+                <a
+                  href="mailto:chadcprobert@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center rounded-md border px-3 py-2.5 text-md transition hover:bg-foreground/5 border-neutral-300"
+                >
+                  <Mail className="mr-2 h-5 w-5" /> Email
+                </a>
+                <button
+                  type="submit"
+                  className="inline-flex items-center rounded-md bg-foreground px-3 py-2.5 text-md font-semibold text-background transition hover:opacity-90 border-neutral-300"
+                >
+                  <Send className="mr-2 h-5 w-5" />{" "}
+                  {loading ? "Sending..." : "Send"}
+                </button>
+              </div>
+              {status && (
+                // TODO: Implement success animation from shadcn.io
+                <div
+                  className={`justify-end flex mt-2 p-3 rounded-md ${
+                    status === "Message sent successfully! 🎉"
+                      ? "bg-green-150 text-green-700"
+                      : "bg-red-150 text-red-800"
+                  } text-center transition-all`}
+                >
+                  {status} 
+                </div>
+              )}
             </div>
           </form>
         </div>
