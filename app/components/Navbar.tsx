@@ -27,7 +27,7 @@ export const Navbar = () => {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-screen -mx-[calc((100vw-100%)/2)] transition-transform duration-300 ${
+      className={`sticky top-0 z-50 w-full overflow-x-clip transition-transform duration-300 ${
         isScrolled ? "backdrop-blur-lg bg-background/50" : "bg-background"
       }`}
     >
