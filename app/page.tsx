@@ -4,6 +4,7 @@ import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 import { About } from "@/components/About";
 import { Skills } from "@/components/skills/Skills";
+import { Projects } from "@/components/Projects";
 
 export default function Home() {
   return (
@@ -30,9 +31,9 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* Rest of page */}
         <About />
         <Skills />
+        <Projects />
       </main>
       <Footer />
     </div>
