@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { About } from "@/components/About";
 import { Skills } from "@/components/skills/Skills";
 import { Projects } from "@/components/Projects";
+import { Contact } from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -34,6 +35,7 @@ export default function Home() {
         <About />
         <Skills />
         <Projects />
+        <Contact />
       </main>
       <Footer />
     </div>

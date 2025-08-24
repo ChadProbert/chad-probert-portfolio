@@ -16,6 +16,7 @@
   --radius: 0.625rem;
   --background: #f1f1f1;
   --foreground: #000000;
+  --input-background: #ededed;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -54,6 +55,7 @@
   --foreground-secondary: #b8c0cc;
   --hover-background-color: #aeaeae;
   --hover-foreground-color: #25292e;
+  --input-background: #1f242a;
   --blur-inner: rgba(23, 23, 23, 0);
   --blur-outer: rgba(23, 23, 23, 0.8);
   --blur-mix-blend-mode: multiply;
