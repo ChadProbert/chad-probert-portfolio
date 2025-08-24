@@ -32,7 +32,11 @@ export const Navbar = () => {
       }`}
     >
       <div className="container mx-auto">
-        <nav className={`flex items-center justify-between lg:px-8 transition-all duration-300 ${isScrolled ? "py-6" : "py-12"}`}>
+        <nav
+          className={`flex items-center justify-between lg:px-8 transition-all duration-300 ${
+            isScrolled ? "py-6" : "py-12"
+          }`}
+        >
           <div className="flex lg:hidden">
             <button
               type="button"
@@ -40,7 +44,11 @@ export const Navbar = () => {
               className="-m-2.5 inline-flex items-center justify-center p-2.5"
             >
               <span className="sr-only">Open main menu</span>
-              <Menu aria-hidden="true" className="size-6" color="var(--foreground)" />
+              <Menu
+                aria-hidden="true"
+                className="size-6"
+                color="var(--foreground)"
+              />
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-40">
@@ -50,7 +58,8 @@ export const Navbar = () => {
                 href={item.href}
                 className="text-xl font-semibold hover:cursor-pointer tracking-wider"
               >
-                <span className="sr-only">{item.name}</span>{item.name}
+                <span className="sr-only">{item.name}</span>
+                {item.name}
               </a>
             ))}
           </div>
@@ -73,7 +82,12 @@ export const Navbar = () => {
               className="mt-1.5"
             >
               <span className="sr-only">Close menu</span>
-              <X aria-hidden="true" className="size-6" color="black" strokeWidth={3} />
+              <X
+                aria-hidden="true"
+                className="size-6"
+                color="black"
+                strokeWidth={3}
+              />
             </button>
           </div>
           <div className="mt-6 flow-root">
@@ -96,4 +110,4 @@ export const Navbar = () => {
       </Dialog>
     </header>
   );
-}
+};

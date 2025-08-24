@@ -1,24 +1,26 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { Send, Mail, Linkedin } from 'lucide-react';
+import React, { useState } from "react";
+import { Send, Mail, Linkedin } from "lucide-react";
 
 export const Contact = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Message:', message);
+    console.log("Name:", name);
+    console.log("Email:", email);
+    console.log("Message:", message);
   };
 
   return (
     <section id="contact" className="mb-24">
       <div className="mx-auto max-w-4xl lg:max-w-5xl px-4 sm:px-6">
-        <h2 className="text-3xl sm:text-5xl font-bold tracking-wide text-center mb-6">Get in Touch</h2>
+        <h2 className="text-3xl sm:text-5xl font-bold tracking-wide text-center mb-6">
+          Get in Touch
+        </h2>
         <p className="text-center text-lg sm:text-3xl mb-10">
           Let&apos;s build impactful digital experiences.
         </p>
@@ -56,7 +58,10 @@ export const Contact = () => {
             </div>
 
             <div>
-              <label htmlFor="message" className="mb-1 block text-md font-medium">
+              <label
+                htmlFor="message"
+                className="mb-1 block text-md font-medium"
+              >
                 Message
               </label>
               <textarea
@@ -97,5 +102,4 @@ export const Contact = () => {
       </div>
     </section>
   );
-
 };
