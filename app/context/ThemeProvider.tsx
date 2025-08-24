@@ -8,19 +8,33 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<"light" | "dark">(() => {
+    // Initialize from localStorage or system preference if available
+    if (typeof window !== "undefined") {
+      const stored = window.localStorage.getItem("theme");
+      if (stored === "light" || stored === "dark") return stored;
+      const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+      return prefersDark ? "dark" : "light";
+    }
+    return "light";
+  });
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
 
   useEffect(() => {
+    // Apply the theme class to the root element
     if (theme === "dark") {
-      document.documentElement.classList.add("dark")
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove("dark")
+      document.documentElement.classList.remove("dark");
     }
-  }, [theme])
+    // Persist the preference
+    try {
+      window.localStorage.setItem("theme", theme);
+    } catch {}
+  }, [theme]);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
