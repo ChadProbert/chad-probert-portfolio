@@ -1,23 +1,51 @@
+import Image from "next/image";
 import "./About.css";
 
 export const About = () => {
   return (
-    <div className="about-container flex flex-col items-center justify-center mx-auto p-10 max-w-5xl mb-20 rounded-2xl border-2 border-neutral-900">
+    <div className="mb-40">
       <h2
         id="about"
-        className="text-3xl font-bold sm:text-5xl dark:text-white mb-8"
+        className="text-3xl font-bold sm:text-5xl dark:text-white mb-20 text-center tracking-wide"
       >
-        About
+        About Me
       </h2>
-      <p className="text-center sm:text-lg sm:max-w-3xl">
-        I am a results-driven, hard-working, and highly ambitious software
-        developer with 3+ years of experience building full-stack, user-centric
-        web applications. My core tech stack is the MERN stack, and I am
-        constantly learning, testing and adapting to new technologies to stay up
-        to date on more efficient and scalable solutions. I relentlessly pursue
-        goals with a first-principles approach, focusing on performance, an
-        intuitive user experience, followed by possibilities for automation. 🚀
-      </p>
+      <div className="flex items-center justify-center gap-6">
+        <div className="about-container flex flex-col items-center justify-center p-15 max-w-3xl rounded-3xl border-1 border-neutral-300">
+          <div className="flex items-center justify-center gap-10">
+            <Image
+              src="/about-icon.svg"
+              alt="About Icon"
+              width={100}
+              height={100}
+            />
+            <p className="text-left sm:text-lg sm:max-w-3xl">
+              I am on a mission to channel my curiosity for technological
+              advancement into creating and maintaining websites, web
+              applications, and software that people can truly immerse
+              themselves in and enjoy using.
+            </p>
+          </div>
+        </div>
+
+        <div className="experience-container flex flex-col items-center justify-center p-11 w-[25%] rounded-3xl border-1 border-neutral-300">
+          <div className="experience-content flex flex-col items-center gap-3">
+            <div className="flex items-center justify-center">
+              <Image
+                src="/experience-icon.svg"
+                alt="Experience Icon"
+                width={90}
+                height={90}
+              />
+            </div>
+            <div className="flex items-center justify-center">
+              <p className="text-center sm:text-2xl font-normal">
+                Years Experience
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
