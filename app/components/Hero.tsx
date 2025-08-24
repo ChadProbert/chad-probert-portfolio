@@ -3,7 +3,7 @@ import "./Hero.css";
 
 export const Hero = () => {
   return (
-    <div className="">
+    <div id="home">
       <div className="relative isolate pt-14">
         <div className="mx-auto py-16 sm:py-24 lg:py-32">
           <div className="text-left">

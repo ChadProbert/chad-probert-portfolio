@@ -7,10 +7,10 @@ import { ThemeToggleButton } from "./ThemeToggleButton";
 import "./Navbar.css";
 
 const navigation = [
-  { name: "Home", href: "#hero" },
+  { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
   { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
 ];
 
