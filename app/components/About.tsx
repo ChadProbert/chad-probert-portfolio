@@ -29,23 +29,23 @@ export const About = () => {
   }, []);
 
   return (
-    <div className="mb-50">
+    <div className="mb-30 lg:mb-50">
       <h2
         id="about"
-        className="text-3xl font-bold sm:text-5xl var(--foreground) mb-20 text-center tracking-wide"
+        className="text-3xl font-bold sm:text-5xl var(--foreground) mb-10 lg:mb-20 text-center tracking-wide"
       >
         About Me
       </h2>
-      <div ref={revealRef} className="flex items-center justify-center gap-6 reveal-on-scroll">
-        <div className="about-container flex flex-col items-center justify-center p-15 max-w-3xl rounded-3xl border-1 border-neutral-300">
-          <div className="flex items-center justify-center gap-10">
+      <div ref={revealRef} className="flex flex-col lg:flex-row items-center justify-center gap-6 reveal-on-scroll">
+        <div className="about-container flex flex-col items-center justify-center p-12 w-[90vw] max-w-3xl rounded-3xl border-1 border-neutral-300">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10">
             <Image
               src="/about-icon.svg"
               alt="About Icon"
               width={100}
               height={100}
             />
-            <p className="text-left sm:text-lg sm:max-w-3xl">
+            <p className="text-center md:text-left sm:text-lg sm:max-w-3xl mt-5">
               I am on a mission to channel my curiosity for technological
               advancement into creating and maintaining websites, web
               applications, and software that people can truly immerse
@@ -54,8 +54,8 @@ export const About = () => {
           </div>
         </div>
 
-        <div className="experience-container flex flex-col items-center justify-center p-11 w-[25%] rounded-3xl border-1 border-neutral-300">
-          <div className="experience-content flex flex-col items-center gap-3">
+        <div className="experience-container hidden md:flex flex-col items-center justify-center p-10 w-full lg:w-[25%] rounded-3xl border-1 border-neutral-300">
+          <div className="experience-content flex flex-col items-center gap-3 sm:text-center">
             <div className="flex items-center justify-center">
               <Image
                 src="/experience-icon.svg"

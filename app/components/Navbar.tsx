@@ -28,13 +28,13 @@ export const Navbar = () => {
   return (
     <header
       className={`sticky top-0 z-50 w-full overflow-x-clip transition-transform duration-300 ${
-        isScrolled ? "backdrop-blur-lg bg-background/50" : "bg-background"
+        isScrolled ? "backdrop-blur-lg bg-background/100" : "bg-background"
       }`}
     >
       <div className="container mx-auto">
         <nav
-          className={`flex items-center justify-between lg:px-8 transition-all duration-300 ${
-            isScrolled ? "py-6" : "py-12"
+          className={`flex items-center justify-between px-4 lg:px-8 transition-all duration-300 ${
+            isScrolled ? "py-6" : "py-4 sm:py-12"
           }`}
         >
           <div className="flex lg:hidden">

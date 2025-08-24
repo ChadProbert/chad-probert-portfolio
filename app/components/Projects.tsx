@@ -44,7 +44,7 @@ export const Projects = () => {
     previewImage,
   }: Project) => {
     return (
-      <div className="project-reveal reveal-on-scroll flex flex-col lg:flex-row items-stretch gap-20 p-8 lg:p-12 rounded-2xl border border-neutral-300">
+      <div className="w-[90%] lg:w-full project-reveal reveal-on-scroll flex flex-col lg:flex-row items-stretch gap-8 lg:gap-20 p-8 lg:p-12 rounded-2xl border border-neutral-300 justify-center mx-auto">
         {/* Preview block */}
         <div
           className={`w-full max-w-md ${
@@ -68,7 +68,7 @@ export const Projects = () => {
                     />
                   </Link>
                 ) : (
-                  <Link href="/project-images/Dev_Trends.png">
+                  <Link href="/project-images/Devtrends.png" target="_blank" rel="noopener noreferrer">
                     <Image
                       src={previewImage}
                       alt="Project Preview"
@@ -89,15 +89,15 @@ export const Projects = () => {
           }`}
         >
           <span className="text-sm font-medium mb-0">Featured Project</span>
-          <h3 className="text-xl sm:text-3xl font-semibold tracking-wide mb-3">
+          <h3 className="text-2xl sm:text-3xl font-semibold tracking-wide mb-3">
             {title}
           </h3>
-          <p className="text-sm sm:text-[15px] w-[75%] mb-2">{description}</p>
+          <p className="text-base mb-2 sm:w-[50%] lg:w-[75%]">{description}</p>
           <div className="mt-2 flex items-center gap-2">
             {demoUrl && (
               <Link
                 href={demoUrl}
-                className="demo-button inline-flex items-center font-medium rounded-xl border px-3 py-1.5 text-sm transition-colors duration-400"
+                className="demo-button inline-flex items-center font-medium rounded-xl border px-4 py-2 text-base transition-colors duration-400"
               >
                 <ArrowUpRight className="mr-1 h-5 w-5" /> Demo
               </Link>
@@ -105,7 +105,7 @@ export const Projects = () => {
             {repoUrl && (
               <Link
                 href={repoUrl}
-                className="inline-flex items-center rounded-xl border px-3 py-1.5 text-sm var(--button-color)"
+                className="inline-flex items-center rounded-xl border px-4 py-2 text-base var(--button-color)"
               >
                 <Github className="mr-2 h-4 w-4" /> Repository
               </Link>
@@ -117,13 +117,13 @@ export const Projects = () => {
   };
 
   return (
-    <div id="projects" className="mb-50">
-      <h2 className="text-3xl font-bold sm:text-5xl var(--foreground) mb-20 text-center tracking-wide">
+    <div id="projects" className="mb-30 lg:mb-50">
+      <h2 className="text-3xl font-bold sm:text-5xl var(--foreground) mb-10 lg:mb-20 text-center tracking-wide">
         Projects
       </h2>
 
       <div>
-        <div className="mx-auto flex max-w-6xl flex-col gap-20">
+        <div className="mx-auto flex max-w-6xl flex-col gap-10 lg:gap-20">
           <ProjectCard
             title="Celerity – New Tab Page"
             description="Celerity is a customisable new tab page featuring lightning-fast search capabilities, developer-inspired themes, and productivity tools."
@@ -138,7 +138,7 @@ export const Projects = () => {
             description="A user-centric web application that interacts with the Dev.to API to fetch and display the latest and most popular development trend articles."
             repoUrl="#"
             previewSide="left"
-            previewImage="/project-images/Dev_Trends.png"
+            previewImage="/project-images/Devtrends.png"
           />
         </div>
       </div>

@@ -135,6 +135,21 @@ const SKILLS_DARK = [
   },
 ];
 
+// If on mobile remove height and width from skill icons
+if (typeof window !== "undefined") {
+  const { width } = window.screen;
+  if (width < 768) {
+    SKILLS_LIGHT.forEach((skill) => {
+      skill.width = 30;
+      skill.height = 30;
+    });
+    SKILLS_DARK.forEach((skill) => {
+      skill.width = 30;
+      skill.height = 30;
+    });
+  }
+}
+
 
 export const MarqueeBottom = () => {
     const { theme } = useContext(ThemeContext);
@@ -147,7 +162,7 @@ export const MarqueeBottom = () => {
         <MarqueeContent direction="right" speed={100}>
 
           {theme === "light" ? SKILLS_LIGHT.map((skill, index) => (
-            <MarqueeItem className="h-32 w-32" key={index}>
+            <MarqueeItem className="h-16 w-16 lg:h-32 lg:w-32" key={index}>
               <Image
                 alt={`${skill.name} Icon`}
                 className="overflow-hidden"
@@ -157,7 +172,7 @@ export const MarqueeBottom = () => {
               />
             </MarqueeItem>
           )) : SKILLS_DARK.map((skill, index) => (
-            <MarqueeItem className="h-32 w-32" key={index}>
+            <MarqueeItem className="h-16 w-16 lg:h-32 lg:w-32" key={index}>
               <Image
                 alt={`${skill.name} Icon`}
                 className="overflow-hidden"
