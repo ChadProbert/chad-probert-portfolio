@@ -47,7 +47,7 @@ export const Projects = () => {
             <div className="project-reveal reveal-on-scroll flex flex-col lg:flex-row items-stretch gap-20 p-8 lg:p-12 rounded-2xl border border-neutral-300">
                 {/* Preview block */}
                 <div className={`w-full max-w-md ${previewSide === "left" ? "lg:order-1" : "lg:order-2"}`}>
-                    <div className="w-full h-44 sm:h-52 md:h-56 lg:h-48 xl:h-56 rounded-sm bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 relative overflow-hidden">
+                    <div className="group w-full h-44 sm:h-52 md:h-56 lg:h-48 xl:h-56 rounded-sm bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 relative overflow-hidden transform transition-transform duration-300 ease-out hover:scale-[1.10]">
                         <div className="absolute inset-0 flex items-center justify-center">
                             <div className="grid grid-cols-3 gap-2 opacity-80">
                                 {demoUrl ? (
@@ -55,7 +55,7 @@ export const Projects = () => {
                                         <Image
                                             src={previewImage}
                                             alt="Project Preview"
-                                            className="w-full h-full object-cover"
+                                            className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-110"
                                             fill
                                     />
                                 </Link>
@@ -64,7 +64,7 @@ export const Projects = () => {
                                     <Image
                                         src={previewImage}
                                         alt="Project Preview"
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-110"
                                         fill
                                     />
                                     </Link>
