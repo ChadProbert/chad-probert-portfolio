@@ -60,7 +60,7 @@ export const Projects = () => {
                                     />
                                 </Link>
                                 ) : (
-                                    <Link href="/Dev_Trends.png">
+                                    <Link href="/project-images/Dev_Trends.png">
                                     <Image
                                         src={previewImage}
                                         alt="Project Preview"
@@ -118,7 +118,7 @@ export const Projects = () => {
                         demoUrl="#"
                         repoUrl="#"
                         previewSide="right"
-                        previewImage="/Celerity.png"        
+                        previewImage="/project-images/Celerity.png"        
                     />
 
                     <ProjectCard
@@ -126,7 +126,7 @@ export const Projects = () => {
                         description="A user-centric web application that interacts with the Dev.to API to fetch and display the latest and most popular development trend articles."
                         repoUrl="#"
                         previewSide="left"
-                        previewImage="/Dev_Trends.png"
+                        previewImage="/project-images/Dev_Trends.png"
                     />
                 </div>
             </div>
