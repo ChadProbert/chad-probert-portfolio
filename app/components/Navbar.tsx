@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { X, Menu } from "lucide-react";
 import { ThemeToggleButton } from "./ThemeToggleButton";
@@ -16,35 +16,49 @@ const navigation = [
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 10);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header>
-      <nav className="flex items-center justify-between py-12 lg:px-8">
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center p-2.5"
-          >
-            <span className="sr-only">Open main menu</span>
-            <Menu aria-hidden="true" className="size-6" color="var(--foreground)" />
-          </button>
-        </div>
-        <div className="hidden lg:flex lg:gap-x-40">
-          {navigation.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="text-xl font-semibold hover:cursor-pointer tracking-wider"
+    <header
+      className={`sticky top-0 z-50 w-screen -mx-[calc((100vw-100%)/2)] transition-transform duration-300 ${
+        isScrolled ? "backdrop-blur-lg bg-background/50" : "bg-background"
+      }`}
+    >
+      <div className="container mx-auto">
+        <nav className={`flex items-center justify-between lg:px-8 transition-all duration-300 ${isScrolled ? "py-6" : "py-12"}`}>
+          <div className="flex lg:hidden">
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(true)}
+              className="-m-2.5 inline-flex items-center justify-center p-2.5"
             >
-              <span className="sr-only">{item.name}</span>{item.name}
-            </a>
-          ))}
-        </div>
-        <div className="lg:flex lg:flex-1 lg:justify-end">
-          <ThemeToggleButton />
-        </div>
-      </nav>
+              <span className="sr-only">Open main menu</span>
+              <Menu aria-hidden="true" className="size-6" color="var(--foreground)" />
+            </button>
+          </div>
+          <div className="hidden lg:flex lg:gap-x-40">
+            {navigation.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-xl font-semibold hover:cursor-pointer tracking-wider"
+              >
+                <span className="sr-only">{item.name}</span>{item.name}
+              </a>
+            ))}
+          </div>
+          <div className="lg:flex lg:flex-1 lg:justify-end">
+            <ThemeToggleButton />
+          </div>
+        </nav>
+      </div>
       <Dialog
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
