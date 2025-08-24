@@ -68,7 +68,11 @@ export const Projects = () => {
                     />
                   </Link>
                 ) : (
-                  <Link href="/project-images/Devtrends.png" target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href="/project-images/Devtrends.png"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Image
                       src={previewImage}
                       alt="Project Preview"

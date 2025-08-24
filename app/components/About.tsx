@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import "./About.css";
 import { useEffect, useRef } from "react";
 
 export const About = () => {
@@ -36,7 +35,10 @@ export const About = () => {
       >
         About Me
       </h2>
-      <div ref={revealRef} className="flex flex-col lg:flex-row items-center justify-center gap-6 reveal-on-scroll">
+      <div
+        ref={revealRef}
+        className="flex flex-col lg:flex-row items-center justify-center gap-6 reveal-on-scroll"
+      >
         <div className="about-container flex flex-col items-center justify-center p-12 w-[90vw] max-w-3xl rounded-3xl border-1 border-neutral-300">
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10">
             <Image

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
-import { Footer } from "@/components/Footer";
 import { About } from "@/components/About";
 import { Skills } from "@/components/skills/Skills";
 import { Projects } from "@/components/Projects";

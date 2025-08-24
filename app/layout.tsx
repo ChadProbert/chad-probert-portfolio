@@ -39,7 +39,7 @@ export default function RootLayout({
           }}
         />
       </head>
-     <body className={`${geist.className} ${geist.variable}`}>
+      <body className={`${geist.className} ${geist.variable}`}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

@@ -1,5 +1,5 @@
-"use client"
-import { useContext  } from "react";
+"use client";
+import { useContext } from "react";
 import {
   Marquee,
   MarqueeContent,
@@ -150,9 +150,8 @@ if (typeof window !== "undefined") {
   }
 }
 
-
 export const MarqueeBottom = () => {
-    const { theme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   return (
     <div>
@@ -160,28 +159,29 @@ export const MarqueeBottom = () => {
         <MarqueeFade side="left" />
         <MarqueeFade side="right" />
         <MarqueeContent direction="right" speed={100}>
-
-          {theme === "light" ? SKILLS_LIGHT.map((skill, index) => (
-            <MarqueeItem className="h-16 w-16 lg:h-32 lg:w-32" key={index}>
-              <Image
-                alt={`${skill.name} Icon`}
-                className="overflow-hidden"
-                src={skill.icon}
-                width={skill.width}
-                height={skill.height}
-              />
-            </MarqueeItem>
-          )) : SKILLS_DARK.map((skill, index) => (
-            <MarqueeItem className="h-16 w-16 lg:h-32 lg:w-32" key={index}>
-              <Image
-                alt={`${skill.name} Icon`}
-                className="overflow-hidden"
-                src={skill.icon}
-                width={skill.width}
-                height={skill.height}
-              />
-            </MarqueeItem>
-          ))}
+          {theme === "light"
+            ? SKILLS_LIGHT.map((skill, index) => (
+                <MarqueeItem className="h-16 w-16 lg:h-32 lg:w-32" key={index}>
+                  <Image
+                    alt={`${skill.name} Icon`}
+                    className="overflow-hidden"
+                    src={skill.icon}
+                    width={skill.width}
+                    height={skill.height}
+                  />
+                </MarqueeItem>
+              ))
+            : SKILLS_DARK.map((skill, index) => (
+                <MarqueeItem className="h-16 w-16 lg:h-32 lg:w-32" key={index}>
+                  <Image
+                    alt={`${skill.name} Icon`}
+                    className="overflow-hidden"
+                    src={skill.icon}
+                    width={skill.width}
+                    height={skill.height}
+                  />
+                </MarqueeItem>
+              ))}
         </MarqueeContent>
       </Marquee>
     </div>

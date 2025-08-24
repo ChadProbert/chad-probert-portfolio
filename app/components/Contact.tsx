@@ -8,7 +8,6 @@ export const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("");
 
-  
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
@@ -128,7 +127,7 @@ export const Contact = () => {
                       : "bg-red-150 text-red-800"
                   } text-center transition-all`}
                 >
-                  {status} 
+                  {status}
                 </div>
               )}
             </div>
