@@ -16,14 +16,14 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="mb-50">
+    <section id="contact" className="mb-24">
       <div className="mx-auto max-w-4xl lg:max-w-5xl px-4 sm:px-6">
         <h2 className="text-3xl sm:text-5xl font-bold tracking-wide text-center mb-6">Get in Touch</h2>
         <p className="text-center text-lg sm:text-3xl mb-10">
           Let&apos;s build impactful digital experiences.
         </p>
 
-        <div className="mt-10 rounded-2xl border p-6 shadow-sm sm:p-16 border-neutral-300">
+        <div className="mt-10 rounded-2xl border p-6 sm:p-16 border-neutral-300">
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label htmlFor="name" className="mb-1 block text-md font-medium">
