@@ -10,29 +10,28 @@
   --blur-outer: rgba(249, 249, 249, 1);
   --button-color: #000000;
   --button-text: #f1f1f1;
-  --availability-border: #cccccc;
+  --cube-color: #f1f1f1;
+  --cube-lines-color: #000000;
 }
 
 .dark {
-  --background: #171717;
-  --deep-background: #0b0b0b;
-  --foreground: #f9f9f9;
-  --hover-background-color: #2424243c;
-  --hover-foreground-color: #f9f9f9;
-  --background-image: 
-    radial-gradient(1000px circle at 50% -300px, rgba(123, 241, 99, 0.25) 0%, rgba(99, 241, 127, 0.06) 40%, rgba(0, 0, 0, 0) 75%),
-    linear-gradient(180deg, #0b0b0b 0%, #111111 60%, #0b0b0b 100%);
+  --background: #25292e;
+  --deep-background: #25292e;
+  --foreground: #e6eaf0;
+  --foreground-secondary: #b8c0cc;
+  --hover-background-color: #aeaeae;
+  --hover-foreground-color: #25292e;
   --blur-inner: rgba(23, 23, 23, 0);
   --blur-outer: rgba(23, 23, 23, 0.8);
   --blur-mix-blend-mode: multiply;
-  --button-color: #19191918;
-  --button-text: #f9f9f9;
-  --availability-border: #f9f9f9;
+  --button-color: #e6e7e8;
+  --button-text: #25292e;
+  --cube-color: #25292e;
+  --cube-lines-color: #e6eaf0;
 }
 
 body {
   font-family: var(--font-geist), sans-serif;
   color: var(--foreground);
   background-color: var(--background);
-  background-image: var(--background-image);
 }

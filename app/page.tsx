@@ -2,7 +2,6 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 import { About } from "@/components/About";
-import { RotatingCube } from "@/components/RotatingCube";
 import Image from "next/image";
 
 export default function Home() {
@@ -16,16 +15,15 @@ export default function Home() {
               <Hero />
             </div>
             <div className="order-1 lg:order-2">
-              <div className="relative flex items-center justify-center">
-                <Image
-                  src="/Gradient.svg"
-                  alt="Gradient"
-                  width={600}
-                  height={600}
-                  className="z-0"
-                />
+              <div className="relative flex items-center justify-end">
                 <div className="absolute z-10">
-                  <RotatingCube />
+                  <Image
+                    src="/rocket.svg"
+                    alt="Cube"
+                    width={360}
+                    height={360}
+                    className="z-10"
+                  />
                 </div>
               </div>
             </div>
