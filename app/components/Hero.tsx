@@ -26,7 +26,7 @@ export const Hero = () => {
 
             <div className="flex items-center justify-start gap-x-6">
               <a
-                href="/downloads/chad-probert-software-developer.pdf"
+                href="/downloads/Chad_Probert_Web_Developer.pdf"
                 className="call-to-action rounded-2xl px-5 py-3.5 text-md font-medium transition-all duration-400"
                 download
               >
