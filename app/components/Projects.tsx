@@ -131,8 +131,8 @@ export const Projects = () => {
           <ProjectCard
             title="Celerity – New Tab Page"
             description="Celerity is a customisable new tab page featuring lightning-fast search capabilities, developer-inspired themes, and productivity tools."
-            demoUrl="#"
-            repoUrl="#"
+            demoUrl="https://chadprobert.github.io/celerity/"
+            repoUrl="https://github.com/ChadProbert/celerity"
             previewSide="right"
             previewImage="/project-images/Celerity.png"
           />
@@ -140,7 +140,7 @@ export const Projects = () => {
           <ProjectCard
             title="Dev Trends"
             description="A user-centric web application that interacts with the Dev.to API to fetch and display the latest and most popular development trend articles."
-            repoUrl="#"
+            repoUrl="https://github.com/ChadProbert/dev-trends"
             previewSide="left"
             previewImage="/project-images/Devtrends.png"
           />
