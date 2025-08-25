@@ -101,6 +101,8 @@ export const Projects = () => {
             {demoUrl && (
               <Link
                 href={demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="demo-button inline-flex items-center font-medium rounded-xl border px-4 py-2 text-base transition-colors duration-400"
               >
                 <ArrowUpRight className="mr-1 h-5 w-5" /> Demo
@@ -109,6 +111,8 @@ export const Projects = () => {
             {repoUrl && (
               <Link
                 href={repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center rounded-xl border px-4 py-2 text-base var(--button-color)"
               >
                 <Github className="mr-2 h-4 w-4" /> Repository
