@@ -8,9 +8,11 @@ const geist = Geist({
   variable: "--font-geist",
 });
 
+// Metadata for SEO
 export const metadata: Metadata = {
   title: "Chad Probert |  Web Developer",
   description: "Chad Probert's developer portfolio",
+  keywords: ["Chad Probert", "Web Developer", "Portfolio"],
 };
 
 export default function RootLayout({
