@@ -30,11 +30,12 @@
 
 <div align="center">
 
-### Lighthouse Scores
-
+### Lighthouse Metrics
+  
 <img src="public/lighthouse-scores.png" alt="Lighthouse Report">
-
 </div>
+
+<br />
 
 ## Setup Instructions
 
