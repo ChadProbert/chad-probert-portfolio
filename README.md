@@ -4,7 +4,6 @@
 
 ### Tech Stack
 
-
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=fff)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=fff)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=fff)
@@ -13,11 +12,9 @@
 
 ![My Portfolio](public/my-portfolio.png)
 
-## Lighthouse Metrics
-
-![Lighthouse Report](public/lighthouse-report.png)
-
 </div>
+
+<br />
 
 ## Features
 
@@ -28,6 +25,16 @@
 - **Contact** — Send a message directly to my email using EmailJS.
 - **Theme** — Switch between light and dark themes.
 - **SEO Optimized** — High SEO performance and fast loading times.
+
+<br />
+
+<div align="center">
+
+### Lighthouse Scores
+
+<img src="public/lighthouse-scores.png" alt="Lighthouse Report">
+
+</div>
 
 ## Setup Instructions
 
