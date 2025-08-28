@@ -1,39 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Chad Probert's Developer Portfolio
 
-## Tech Stack
-Next.js + TypeScript + Context API + Tailwind v4 + EmailJS
+### Tech Stack
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=fff)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=fff)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=fff)
+![Context API](https://img.shields.io/badge/Context_API-000000?style=for-the-badge&logo=react&logoColor=fff)
+![EmailJS](https://img.shields.io/badge/EmailJS-000000?style=for-the-badge&logo=emailjs&logoColor=fff)
 
-## Getting Started
 
-First, run the development server:
+### Features
+- **Home** — Modern, responsive, and includes CTA buttons to download my CV and contact me.
+- **About** — Learn about my mission and experience.
+- **Skills** — A marquee showcasing my tech skills as icons.
+- **Projects** — View my featured projects with live demos and GitHub repository links.
+- **Contact** — Send a message directly to my email using EmailJS.
+- **Theme** — Switch between light and dark themes.
+- **SEO Optimized** — High SEO performance and fast loading times.
 
+## Lighthouse Metrics
+
+![Lighthouse Metrics](public/lighthouse-report.png)
+
+## Setup Instructions
+
+### Prerequisites
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/) (Node Package Manager)
+
+
+### 1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/ChadProbert/chad-probert-portfolio.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Project Dependencies
+```bash
+cd chad-probert-portfolio && npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Setup Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file in the project root with the following variables:
 
-## Learn More
+```env
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=replace_with_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=replace_with_template_id
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=replace_with_public_key
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 4. Running the App
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 5. Open in Browser
+Visit **[http://localhost:3000](http://localhost:3000)** in your browser.
