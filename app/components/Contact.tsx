@@ -8,11 +8,47 @@ export const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("");
 
+  // Sends a direct message to my email using EmailJS
+  // Validates form fields and email format
+  // validates length of name and message fields (max 100 characters)
+  // Returns a success or error message to the user
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
 
     const form = e.currentTarget;
+    const formData = new FormData(form);
+    const name = formData.get("name")!.toString();
+    const email = formData.get("email")!.toString();
+    const message = formData.get("message")!.toString();
+
+
+    // Ensure the name, email and message fields are not empty
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      setStatus("Please fill out all the form fields.");
+      setLoading(false);
+      return;
+    }
+
+    // Ensure the name and message fields do not exceed 100 characters
+    if (name.length > 100 || email.length > 100 || message.length > 100) {
+      setStatus("Please ensure the name, email and message fields do not exceed 100 characters.");
+      setLoading(false);
+      return;
+    }
+
+    // This regex pattern ensures the email has:
+    // - a single @ symbol
+    // - at least 1 character before and after @
+    // - at least 1 . in the domain part
+    // - no whitespace allowed
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+      setStatus("Please enter a valid email address.");
+      setLoading(false);
+      return;
+    }
 
     emailjs
       .sendForm(
@@ -23,7 +59,7 @@ export const Contact = () => {
       )
       .then(
         () => {
-          setStatus("Message sent successfully! 🎉");
+          setStatus("Message sent successfully! 🚀");
           setLoading(false);
           form.reset();
         },
@@ -41,36 +77,46 @@ export const Contact = () => {
         <h2 className="text-3xl sm:text-5xl font-bold tracking-wide text-center mb-6">
           Get in Touch
         </h2>
-        <p className="text-center text-lg sm:text-3xl mb-10">
+        <p className="text-center text-lg sm:text-3xl mb-6">
           Let&apos;s build impactful digital experiences.
         </p>
+
+        {status && (
+          <div
+            className={`justify-center flex mt-2 p-3 rounded-md mb-10 text-xl ${
+              status === "Message sent successfully! 🚀"
+                ? "bg-green-150 text-green-500"
+                : "bg-red-150 text-red-500"
+            } transition-all`}
+          >
+            {status}
+          </div>
+        )}
 
         <div className="mt-10 rounded-2xl border p-6 sm:p-16 border-neutral-300">
           <form onSubmit={sendEmail} className="space-y-5">
             <div>
               <label htmlFor="name" className="mb-1 block text-md font-medium">
-                Name
+                Name*
               </label>
               <input
                 id="name"
                 name="name"
                 type="text"
                 placeholder="Your name"
-                required
                 className="w-full rounded border px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-2 focus:ring-foreground/100 border-neutral-300 bg-[var(--input-background)]"
               />
             </div>
 
             <div>
               <label htmlFor="email" className="mb-1 block text-md font-medium">
-                Email
+                Email*
               </label>
               <input
                 id="email"
                 name="email"
                 type="email"
                 placeholder="you@example.com"
-                required
                 className="w-full rounded border px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-2 focus:ring-foreground/100 border-neutral-300 bg-[var(--input-background)]"
               />
             </div>
@@ -80,14 +126,13 @@ export const Contact = () => {
                 htmlFor="message"
                 className="mb-1 block text-md font-medium"
               >
-                Message
+                Message*
               </label>
               <textarea
                 id="message"
                 name="message"
                 rows={5}
                 placeholder="What you got on your mind?"
-                required
                 className="w-full resize-y rounded border px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-2 focus:ring-foreground/100 border-neutral-300 bg-[var(--input-background)]"
               />
             </div>
@@ -118,18 +163,6 @@ export const Contact = () => {
                   {loading ? "Sending..." : "Send"}
                 </button>
               </div>
-              {status && (
-                // TODO: Implement success animation from shadcn.io
-                <div
-                  className={`justify-end flex mt-2 p-3 rounded-md ${
-                    status === "Message sent successfully! 🎉"
-                      ? "bg-green-150 text-green-700"
-                      : "bg-red-150 text-red-800"
-                  } text-center transition-all`}
-                >
-                  {status}
-                </div>
-              )}
             </div>
           </form>
         </div>
