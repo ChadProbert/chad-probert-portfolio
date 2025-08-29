@@ -40,8 +40,8 @@
 ## Setup Instructions
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/)
-- [npm](https://www.npmjs.com/) (Node Package Manager)
+- **[Node.js](https://nodejs.org/)**
+- **[npm](https://www.npmjs.com/)**
 
 
 ### 1. Clone the repository
