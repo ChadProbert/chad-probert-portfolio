@@ -62,7 +62,7 @@ export const Projects = () => {
                   >
                     <Image
                       src={previewImage}
-                      alt="Project Preview"
+                      alt="Preview of Celerity New Tab Page - Created by Chad Probert"
                       className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-110"
                       fill
                     />
@@ -75,7 +75,7 @@ export const Projects = () => {
                   >
                     <Image
                       src={previewImage}
-                      alt="Project Preview"
+                      alt="Preview of Dev Trends - Created by Chad Probert"
                       className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-110"
                       fill
                     />
