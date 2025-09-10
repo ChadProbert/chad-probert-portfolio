@@ -14,28 +14,16 @@ const geist = Geist({
 export const metadata: Metadata = {
   title: "Chad Probert | Web Developer",
   description:
-    "Professional portfolio of Chad Probert, a Web Developer specialising in modern web technologies. Check out my projects, skills, and get in touch for collaboration opportunities.",
-  keywords: [
-    "Chad Probert",
-    "Web Developer",
-    "Frontend Developer",
-    "React Developer",
-    "Next.js Developer",
-    "Portfolio",
-    "Web Development",
-    "Full Stack Web Developer",
-    "Software Developer",
-    
-  ],
+    "Professional portfolio of Chad Probert, a Web Developer from South Africa specialising in modern web technologies.",
   authors: [{ name: "Chad Probert" }],
   creator: "Chad Probert",
   publisher: "Chad Probert",
   openGraph: {
     title: "Chad Probert | Web Developer",
     description:
-      "Professional portfolio of Chad Probert, a Web Developer specialising in modern web technologies. Check out my projects, skills, and get in touch for collaboration opportunities.",
+      "Professional portfolio of Chad Probert, a Web Developer from South Africa specialising in modern web technologies.",
     url: "https://chad-probert-portfolio.vercel.app",
-    siteName: "Chad Probert Portfolio",
+    siteName: "Chad Probert's Developer Portfolio",
     locale: "en_US",
     type: "website",
   },
@@ -43,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Chad Probert | Web Developer",
     description:
-      "Professional portfolio of Chad Probert, a Web Developer specialising in modern web technologies. Check out my projects, skills, and get in touch for collaboration opportunities.",
+      "Professional portfolio of Chad Probert, a Web Developer from South Africa specialising in modern web technologies.",
   },
   robots: {
     index: true,
@@ -51,9 +39,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      "max-video-preview": -1, // Prevents video previews
-      "max-image-preview": "large", // Allows large image previews
-      "max-snippet": -1, // Prevents text snippets
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   icons: {
@@ -71,7 +59,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content={metadata?.description ?? ""} />
+        <meta name="description" content={metadata?.description ?? "Professional portfolio of Chad Probert, a Web Developer from South Africa specialising in modern web technologies. Check out my projects, skills, and get in touch for collaboration opportunities."} />
         <meta name="theme-color" content="#25292e" />
         <link
           rel="canonical"
