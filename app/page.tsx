@@ -21,7 +21,7 @@ export default function Home() {
                 <div className="absolute z-10">
                   <Image
                     src="/rocket.svg"
-                    alt="Cube"
+                    alt="Rocket icon - Chad Probert"
                     width={360}
                     height={360}
                     className="z-0 fade-in-5"
