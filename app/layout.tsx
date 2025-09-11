@@ -48,6 +48,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons: { icon: "/about-icon.png" },
 };
 
 export default function RootLayout({
@@ -59,6 +60,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#25292e" />
+         <link rel="icon" type="image/svg+xml" href="/about-icon.svg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
