@@ -157,7 +157,7 @@ export const Contact = () => {
                 </a>
                 <button
                   type="submit"
-                  className="inline-flex items-center rounded-md bg-foreground px-3 py-2.5 text-md font-semibold text-background transition hover:opacity-90 border-neutral-300"
+                  className="cursor-pointer inline-flex items-center rounded-md bg-foreground px-3 py-2.5 text-md font-semibold text-background transition hover:opacity-90 border-neutral-300"
                 >
                   <Send className="mr-2 h-5 w-5" />{" "}
                   {loading ? "Sending..." : "Send"}
