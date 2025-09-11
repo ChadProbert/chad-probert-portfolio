@@ -49,7 +49,6 @@ export const metadata: Metadata = {
     },
   },
   icons: { icon: "/about-icon.svg" },
-  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
@@ -61,6 +60,26 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#25292e" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Chad Probert",
+              "jobTitle": "Coding Mentor",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "HyperionDev"
+              },
+              "url": "https://chad-probert-portfolio.vercel.app/",
+              "sameAs": [
+                "https://www.linkedin.com/in/chad-probert-6421b321b/",
+                "https://github.com/ChadProbert"
+              ]
+            }).replace(/</g, "\\u003c")
+          }}
+        />
         {/* Set theme from localStorage or system preference. Although dangerouslySetInnerHTML is not recommended, 
         it is the recommended way to set the theme in this case. The practice is safe when the injected code is static
         and does not contain any user-provided data. */}
