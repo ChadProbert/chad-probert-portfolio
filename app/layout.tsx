@@ -12,26 +12,30 @@ const geist = Geist({
 
 // Metadata for SEO
 export const metadata: Metadata = {
-  title: "Chad Probert | Web Developer",
+  metadataBase: new URL("https://chad-probert-portfolio.vercel.app"),
+  title: "Chad Probert | Web Developer | Portfolio",
   description:
-    "Professional portfolio of Chad Probert, a Web Developer from South Africa specialising in modern web technologies.",
+    "Chad Probert - Web Developer in South Africa. Shipping fast React/Next.js SEO-ready builds. View my portfolio to find out more about me and get in touch.",
   authors: [{ name: "Chad Probert" }],
   creator: "Chad Probert",
   publisher: "Chad Probert",
+  alternates: { canonical: "./" },
   openGraph: {
-    title: "Chad Probert | Web Developer",
+    title: "Chad Probert | Web Developer | Portfolio",
     description:
-      "Professional portfolio of Chad Probert, a Web Developer from South Africa specialising in modern web technologies.",
+      "Chad Probert - Web Developer in South Africa. Shipping fast React/Next.js SEO-ready builds. View my portfolio to find out more about me and get in touch.",
     url: "https://chad-probert-portfolio.vercel.app",
     siteName: "Chad Probert's Developer Portfolio",
     locale: "en_US",
     type: "website",
+    images: [{ url: "/og-image-1200x630.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chad Probert | Web Developer",
+    title: "Chad Probert | Web Developer | Portfolio",
     description:
-      "Professional portfolio of Chad Probert, a Web Developer from South Africa specialising in modern web technologies.",
+      "Chad Probert - Web Developer in South Africa. Shipping fast React/Next.js SEO-ready builds. View my portfolio to find out more about me and get in touch.",
+    images: ["/og-image-1200x600.jpg"],
   },
   robots: {
     index: true,
@@ -44,9 +48,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  icons: {
-    icon: "/about-icon.svg",
-  },
+  icons: { icon: "/about-icon.svg" },
   manifest: "/site.webmanifest",
 };
 
@@ -58,13 +60,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content={metadata?.description ?? "Professional portfolio of Chad Probert, a Web Developer from South Africa specialising in modern web technologies. Check out my projects, skills, and get in touch for collaboration opportunities."} />
         <meta name="theme-color" content="#25292e" />
-        <link
-          rel="canonical"
-          href="https://chad-probert-portfolio.vercel.app/"
-        />
         {/* Set theme from localStorage or system preference. Although dangerouslySetInnerHTML is not recommended, 
         it is the recommended way to set the theme in this case. The practice is safe when the injected code is static
         and does not contain any user-provided data. */}
