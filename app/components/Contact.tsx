@@ -138,28 +138,28 @@ export const Contact = () => {
             </div>
 
             <div className="flex flex-col space-y-4 pt-2">
-              <div className="flex items-center justify-end gap-3">
+              <div className="flex items-center justify-end gap-3 flex-wrap max-[500px]:justify-center max-[405px]:gap-2">
                 <a
                   href="https://www.linkedin.com/in/chad-probert-6421b321b/"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center rounded-md border px-3 py-2.5 text-md transition hover:bg-foreground/5 border-neutral-300"
+                  className="inline-flex items-center rounded-md border px-3 py-2.5 text-md transition hover:bg-foreground/5 border-neutral-300 max-[405px]:px-2 max-[405px]:py-2 max-[405px]:text-sm"
                 >
-                  <Linkedin className="mr-2 h-5 w-5" /> LinkedIn
+                  <Linkedin className="mr-2 h-5 w-5 max-[405px]:mr-1.5 max-[405px]:h-4 max-[405px]:w-4" /> LinkedIn
                 </a>
                 <a
                   href="mailto:chadcprobert@gmail.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center rounded-md border px-3 py-2.5 text-md transition hover:bg-foreground/5 border-neutral-300"
+                  className="inline-flex items-center rounded-md border px-3 py-2.5 text-md transition hover:bg-foreground/5 border-neutral-300 max-[405px]:px-2 max-[405px]:py-2 max-[405px]:text-sm"
                 >
-                  <Mail className="mr-2 h-5 w-5" /> Email
+                  <Mail className="mr-2 h-5 w-5 max-[405px]:mr-1.5 max-[405px]:h-4 max-[405px]:w-4" /> Email
                 </a>
                 <button
                   type="submit"
-                  className="cursor-pointer inline-flex items-center rounded-md bg-foreground px-3 py-2.5 text-md font-semibold text-background hover:opacity-90 transition-colours duration-400 border-neutral-300"
+                  className="cursor-pointer inline-flex items-center rounded-md bg-foreground px-3 py-2.5 text-md font-semibold text-background hover:opacity-90 transition-colours duration-400 border-neutral-300 max-[405px]:px-2 max-[405px]:py-2 max-[405px]:text-sm"
                 >
-                  <Send className="mr-2 h-5 w-5" />{" "}
+                  <Send className="mr-2 h-5 w-5 max-[405px]:mr-1.5 max-[405px]:h-4 max-[405px]:w-4" />{" "}
                   {loading ? "Sending..." : "Send"}
                 </button>
               </div>
