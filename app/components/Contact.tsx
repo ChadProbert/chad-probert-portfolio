@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { Send, Mail, Linkedin } from "lucide-react";
+import { Send, Mail, ArrowUpRight } from "lucide-react";
 
 export const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -145,7 +145,7 @@ export const Contact = () => {
                   rel="noreferrer"
                   className="inline-flex items-center rounded-md border px-3 py-2.5 text-md transition hover:bg-foreground/5 border-neutral-300 max-[405px]:px-2 max-[405px]:py-2 max-[405px]:text-sm"
                 >
-                  <Linkedin className="mr-2 h-5 w-5 max-[405px]:mr-1.5 max-[405px]:h-4 max-[405px]:w-4" /> LinkedIn
+                  <ArrowUpRight className="mr-2 h-5 w-5 text-black max-[405px]:mr-1.5 max-[405px]:h-4 max-[405px]:w-4" /> LinkedIn
                 </a>
                 <a
                   href="mailto:chadcprobert@gmail.com"
