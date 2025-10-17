@@ -37,7 +37,7 @@ export const Hero = () => {
               </a>
               <a
                 href="#contact"
-                className="font-normal rounded-2xl px-5 py-3.5 text-md border-1 border-neutral-300 transition-colors duration-300 "
+                className="font-normal rounded-2xl px-5 py-3.5 text-md border-1 border-neutral-300 hover:bg-foreground/5 transition-colors duration-400 "
               >
                 <div className="flex items-center gap-2">
                   <Mail height={18} width={20} strokeWidth={2} /> Contact me
