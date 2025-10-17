@@ -41,12 +41,12 @@ export const Navbar = () => {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
-              className="-m-2.5 inline-flex items-center justify-center p-2.5"
+              className="inline-flex items-center justify-center rounded-xl border-1 border-neutral-200 bg-background p-3 hover:bg-foreground/5 transition-colors duration-400 hover:cursor-pointer focus:outline-none"
             >
               <span className="sr-only">Open main menu</span>
               <Menu
                 aria-hidden="true"
-                className="size-6"
+                className="size-5"
                 color="var(--foreground)"
               />
             </button>
@@ -73,25 +73,28 @@ export const Navbar = () => {
         onClose={setMobileMenuOpen}
         className="lg:hidden"
       >
-        <div className="fixed inset-0 z-50" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div
+          aria-hidden="true"
+          className="fixed inset-0 z-50 bg-black/20 backdrop-blur-sm transition-colors dark:bg-black/40"
+        />
+        <DialogPanel className="fixed inset-y-0 right-0 z-60 w-full overflow-y-auto bg-background p-4 text-foreground shadow-lg transition-colors sm:max-w-sm sm:ring-1 sm:ring-border">
           <div className="flex items-center justify-between">
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
-              className="mt-1.5"
+              className="inline-flex items-center justify-center rounded-xl border-1 border-neutral-200 bg-background p-3 hover:bg-foreground/5 transition-colors duration-400 hover:cursor-pointer focus:outline-none"
             >
               <span className="sr-only">Close menu</span>
               <X
                 aria-hidden="true"
-                className="size-6"
-                color="black"
+                className="size-5"
+                color="var(--foreground)"
                 strokeWidth={3}
               />
             </button>
           </div>
           <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
+            <div className="-my-6 divide-y divide-border/60">
               {/* Center it vertically */}
               <div className="space-y-2 py-10 text-center">
                 {navigation.map((item) => (
