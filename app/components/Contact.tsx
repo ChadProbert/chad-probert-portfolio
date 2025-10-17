@@ -145,7 +145,7 @@ export const Contact = () => {
                   rel="noreferrer"
                   className="inline-flex items-center rounded-xl border px-4 py-2.5 text-md transition hover:bg-foreground/5 border-neutral-300 max-[405px]:px-2 max-[405px]:py-2 max-[405px]:text-sm"
                 >
-                  <ArrowUpRight className="mr-2 h-5 w-5 text-black max-[405px]:mr-1.5 max-[405px]:h-4 max-[405px]:w-4" />{" "}
+                  <ArrowUpRight className="mr-2 h-5 w-5 text-[var(--foreground)] max-[405px]:mr-1.5 max-[405px]:h-4 max-[405px]:w-4" />{" "}
                   LinkedIn
                 </a>
                 <a
