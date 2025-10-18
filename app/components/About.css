@@ -73,6 +73,13 @@
   background: rgba(43, 43, 43, 0.208);
 }
 
+.dark .about-highlight:hover {
+  /* Mirror light-mode hover lift while keeping dark palette */
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(68, 68, 68, 0.35);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
 /* Icon container (dark mode) */
 .dark .about-highlight__icon {
   background: rgba(0, 0, 0, 0);

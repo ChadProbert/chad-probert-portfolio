@@ -34,7 +34,7 @@ export const Hero = () => {
             <div className="mt-10 hero-actions flex flex-wrap items-center justify-center gap-3 sm:gap-4">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 rounded-2xl border px-6 py-3 text-base font-medium transition-colors duration-300 hover:bg-foreground/5"
+                className="call-to-action inline-flex items-center gap-2 rounded-2xl border px-6 py-3 text-base font-medium transition-colors duration-300 hover:bg-foreground/5"
               >
                 <PhoneOutgoing className="mr-1 h-5 w-5" strokeWidth={2} />
                 Get in Touch
