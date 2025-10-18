@@ -3,11 +3,14 @@ import "./Hero.css";
 
 export const Hero = () => {
   return (
-    <div id="home">
+    <section id="home" aria-labelledby="home-heading">
       <div className="relative isolate pt-14">
         <div className="mx-auto py-8 sm:py-24 lg:py-32">
-          <div className="text-center md:text-left lg:text-left">
-            <h1 className="text-5xl font-semibold sm:text-8xl tracking-wide">
+          <header className="text-center md:text-left lg:text-left">
+            <h1
+              id="home-heading"
+              className="text-5xl font-semibold sm:text-8xl tracking-wide"
+            >
               Chad Probert
             </h1>
             <p className="mt-6 mb-8 text-2xl font-normal text-pretty sm:text-5xl">
@@ -44,9 +47,9 @@ export const Hero = () => {
                 </div>
               </a>
             </div>
-          </div>
+          </header>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
