@@ -78,6 +78,18 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#25292e" />
+        <meta name="color-scheme" content="dark light" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://vitals.vercel-insights.com"
+          crossOrigin="anonymous"
+        />
         <link
           rel="icon"
           type="image/x-icon"
@@ -170,4 +182,3 @@ export default function RootLayout({
     </html>
   );
 }
-
