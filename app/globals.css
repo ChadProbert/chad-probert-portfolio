@@ -6,16 +6,14 @@
 :root {
   --deep-background: #ffffff;
   --hover-background-color: #2c2c2c;
-  --hover-foreground-color: #f1f1f1;
+  --hover-foreground-color: #ffffff;
   --anchor-offset: 7rem;
   --blur-inner: rgba(255, 255, 255, 0);
   --blur-outer: rgba(249, 249, 249, 1);
   --button-color: #000000;
-  --button-text: #f1f1f1;
-  --cube-color: #f1f1f1;
-  --cube-lines-color: #000000;
+  --button-text: #ffffff;
   --radius: 0.625rem;
-  --background: #f1f1f1;
+  --background: #ffffff;
   --foreground: #000000;
   --input-background: #ededed;
   --card: oklch(1 0 0);
@@ -50,21 +48,19 @@
 }
 
 .dark {
-  --background: #25292e;
-  --deep-background: #25292e;
-  --foreground: #e6e7e8;
-  --foreground-secondary: #b8c0cc;
+  --background: #000;
+  --deep-background: #000;
+  --foreground: #ffffff;
+  --foreground-secondary: #ffffff;
   --hover-background-color: #aeaeae;
-  --hover-foreground-color: #25292e;
-  --input-background: #1c1f23;
+  --hover-foreground-color: #000000;
+  --input-background: #060606;
   --blur-inner: rgba(23, 23, 23, 0);
   --blur-outer: rgba(23, 23, 23, 0.8);
   --blur-mix-blend-mode: multiply;
-  --button-color: #e6e7e8;
-  --button-text: #25292e;
-  --cube-color: #25292e;
-  --cube-lines-color: #e6eaf0;
-  --card: oklch(0.205 0 0);
+  --button-color: #ffffff;
+  --button-text: #000000;
+  --card: oklch(0.0 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
@@ -77,7 +73,7 @@
   --accent: oklch(0.269 0 0);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
+  --border: oklch(22.645% 0.00003 271.152);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
   --chart-1: oklch(0.488 0.243 264.376);

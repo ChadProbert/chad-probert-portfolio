@@ -76,7 +76,7 @@ const ProjectCard = ({
 
   return (
     <article
-      className="w-[90%] lg:w-full project-reveal reveal-on-scroll flex flex-col lg:flex-row items-stretch gap-8 lg:gap-20 p-8 lg:p-12 rounded-2xl border border-neutral-300 justify-center mx-auto"
+      className="w-[90%] lg:w-full project-reveal reveal-on-scroll flex flex-col lg:flex-row items-stretch gap-8 lg:gap-20 p-8 lg:p-12 rounded-2xl border bg-card justify-center mx-auto"
       itemScope
       itemType="https://schema.org/CreativeWork"
       aria-labelledby={headingId}
@@ -126,7 +126,7 @@ const ProjectCard = ({
               href={demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="demo-button inline-flex items-center font-medium rounded-xl border px-4 py-2 text-base transition-colors duration-400"
+              className="demo-button inline-flex items-center font-medium rounded-xl border-1 px-4 py-2 text-base transition-colors duration-400"
               itemProp="url"
             >
               <ArrowUpRight className="mr-1 h-5 w-5" /> Demo
@@ -137,7 +137,7 @@ const ProjectCard = ({
               href={repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-xl border px-4 py-2 text-base var(--button-color)"
+              className="inline-flex items-center rounded-xl border-1 hover:bg-foreground/5 px-4 py-2 text-base transition-colors duration-400"
               itemProp="sameAs"
             >
               <Github className="mr-2 h-4 w-4" /> Repository

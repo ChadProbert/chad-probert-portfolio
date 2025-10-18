@@ -100,7 +100,7 @@ export const Contact = () => {
           Let&apos;s build impactful digital experiences.
         </p>
 
-        <div className="mt-10 rounded-2xl border p-6 sm:p-16 border-neutral-300">
+        <div className="mt-10 rounded-2xl border p-6 sm:p-16 bg-card shadow-lg">
           <form onSubmit={sendEmail} className="space-y-5">
             <div>
               <label htmlFor="name" className="mb-1 block text-md font-medium">
@@ -111,7 +111,7 @@ export const Contact = () => {
                 name="name"
                 type="text"
                 placeholder="Your name"
-                className="w-full rounded border px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-2 focus:ring-foreground/100 border-neutral-300 bg-[var(--input-background)]"
+                className="w-full rounded border px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-1 focus:ring-foreground/100 bg-[var(--input-background)]"
               />
             </div>
 
@@ -124,7 +124,7 @@ export const Contact = () => {
                 name="email"
                 type="email"
                 placeholder="you@domain.com"
-                className="w-full rounded border px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-2 focus:ring-foreground/100 border-neutral-300 bg-[var(--input-background)]"
+                className="w-full rounded border px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-1 focus:ring-foreground/100 bg-[var(--input-background)]"
               />
             </div>
 
@@ -140,7 +140,7 @@ export const Contact = () => {
                 name="message"
                 rows={5}
                 placeholder="What would you like to chat about?"
-                className="w-full resize-y rounded border px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-2 focus:ring-foreground/100 border-neutral-300 bg-[var(--input-background)]"
+                className="w-full resize-y rounded border px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-1 focus:ring-foreground/100 bg-[var(--input-background)]"
               />
             </div>
 
@@ -163,7 +163,7 @@ export const Contact = () => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Connect with Chad on LinkedIn"
-                  className="inline-flex items-center rounded-xl border px-4 py-2.5 text-md transition hover:bg-foreground/5 border-neutral-300 max-[405px]:px-2 max-[405px]:py-2 max-[405px]:text-sm"
+                  className="inline-flex items-center rounded-xl border px-4 py-2.5 text-md transition hover:bg-foreground/5 max-[405px]:px-2 max-[405px]:py-2 max-[405px]:text-sm"
                 >
                   <ArrowUpRight className="mr-2 h-5 w-5 text-[var(--foreground)] max-[405px]:mr-1.5 max-[405px]:h-4 max-[405px]:w-4" />
                   LinkedIn
@@ -173,14 +173,14 @@ export const Contact = () => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Send an email to Chad"
-                  className="inline-flex items-center rounded-xl border px-4 py-2.5 text-md transition hover:bg-foreground/5 border-neutral-300 max-[405px]:px-2 max-[405px]:py-2 max-[405px]:text-sm"
+                  className="inline-flex items-center rounded-xl border px-4 py-2.5 text-md transition hover:bg-foreground/5 max-[405px]:px-2 max-[405px]:py-2 max-[405px]:text-sm"
                 >
                   <Mail className="mr-2 h-5 w-5 max-[405px]:mr-1.5 max-[405px]:h-4 max-[405px]:w-4" />
                   Email
                 </a>
                 <button
                   type="submit"
-                  className="call-to-action cursor-pointer inline-flex items-center rounded-xl px-8 py-2.5 text-md font-medium transition-all duration-400 max-[405px]:px-5 border max-[405px]:py-2 max-[405px]:text-sm"
+                  className="call-to-action cursor-pointer inline-flex items-center rounded-xl px-8 py-2.5 text-md transition-all duration-400 max-[405px]:px-5 border max-[405px]:py-2 max-[405px]:text-sm"
                 >
                   {loading ? "Sending..." : "Send"}
                 </button>

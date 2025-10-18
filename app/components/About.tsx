@@ -39,7 +39,7 @@ export const About = () => {
         ref={revealRef}
         className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-6 reveal-on-scroll"
       >
-        <div className="about-container flex flex-col items-center justify-center p-12 w-[90vw] max-w-3xl rounded-3xl border-1 border-neutral-300 lg:self-stretch">
+        <div className="flex flex-col items-center justify-center bg-card p-12 w-[90vw] max-w-3xl rounded-3xl border-1 lg:self-stretch">
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10">
             <Image
               src="/about-icon.svg"
@@ -56,7 +56,7 @@ export const About = () => {
           </div>
         </div>
 
-        <div className="experience-container hidden md:flex flex-col items-center justify-center p-10 w-full lg:w-[25%] rounded-3xl border-1 border-neutral-300 lg:self-stretch">
+        <div className="experience-container hidden md:flex flex-col items-center justify-center bg-card p-10 w-full lg:w-[25%] rounded-3xl border-1 lg:self-stretch">
           <div className="experience-content flex flex-col items-center gap-3 sm:text-center">
             <div className="flex items-center justify-center">
               <Image
