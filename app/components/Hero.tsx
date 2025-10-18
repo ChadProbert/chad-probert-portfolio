@@ -9,14 +9,13 @@ export const Hero = () => {
       className="relative isolate"
     >
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div className="hero-surface relative overflow-hidden rounded-3xl bg-[var(--background)]/80 px-6 py-16 text-center  shadow-black/10 backdrop-blur-sm sm:px-12 sm:py-20 lg:px-16 lg:py-24">
+        <div className="hero-surface relative overflow-hidden rounded-3xl bg-[var(--background)]/80 px-6 py-16 text-center backdrop-blur-sm sm:px-12 sm:py-20 lg:px-16 lg:py-24">
           <div className="hero-glow" aria-hidden="true" />
           <header className="flex flex-col items-center gap-8">
-            <span className="inline-flex items-center gap-2 rounded-full bg-[var(--background)]/90 px-4 py-1.5 text-sm font-medium text-muted-foreground shadow-sm backdrop-blur">
-              <span aria-hidden="true" className="h-2 w-2 rounded-full bg-emerald-500" />
+            <span className="hero-status inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium text-muted-foreground">
+              <span aria-hidden="true" className="status-indicator h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
               <span className="inline-flex items-center gap-1">
                 Available for new projects
-                <Zap className="h-4 w-4 text-emerald-500" aria-hidden="true" />
               </span>
             </span>
 
