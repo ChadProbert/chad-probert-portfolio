@@ -4,6 +4,25 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Mail, ArrowUpRight } from "lucide-react";
 
+const CONTACT_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Contact Chad Probert",
+  mainEntity: {
+    "@type": "Person",
+    name: "Chad Probert",
+    email: "mailto:chadcprobert@gmail.com",
+    sameAs: [
+      "https://www.linkedin.com/in/chad-probert-6421b321b/",
+      "https://github.com/ChadProbert",
+    ],
+    worksFor: {
+      "@type": "Organization",
+      name: "Natmed Medical Defence",
+    },
+  },
+};
+
 export const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("");
@@ -143,18 +162,20 @@ export const Contact = () => {
                   href="https://www.linkedin.com/in/chad-probert-6421b321b/"
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="Connect with Chad on LinkedIn"
                   className="inline-flex items-center rounded-xl border px-4 py-2.5 text-md transition hover:bg-foreground/5 border-neutral-300 max-[405px]:px-2 max-[405px]:py-2 max-[405px]:text-sm"
                 >
-                  <ArrowUpRight className="mr-2 h-5 w-5 text-[var(--foreground)] max-[405px]:mr-1.5 max-[405px]:h-4 max-[405px]:w-4" />{" "}
+                  <ArrowUpRight className="mr-2 h-5 w-5 text-[var(--foreground)] max-[405px]:mr-1.5 max-[405px]:h-4 max-[405px]:w-4" />
                   LinkedIn
                 </a>
                 <a
                   href="mailto:chadcprobert@gmail.com"
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="Send an email to Chad"
                   className="inline-flex items-center rounded-xl border px-4 py-2.5 text-md transition hover:bg-foreground/5 border-neutral-300 max-[405px]:px-2 max-[405px]:py-2 max-[405px]:text-sm"
                 >
-                  <Mail className="mr-2 h-5 w-5 max-[405px]:mr-1.5 max-[405px]:h-4 max-[405px]:w-4" />{" "}
+                  <Mail className="mr-2 h-5 w-5 max-[405px]:mr-1.5 max-[405px]:h-4 max-[405px]:w-4" />
                   Email
                 </a>
                 <button
@@ -168,6 +189,12 @@ export const Contact = () => {
           </form>
         </div>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(CONTACT_SCHEMA).replace(/</g, "\\u003c"),
+        }}
+      />
     </section>
   );
 };
