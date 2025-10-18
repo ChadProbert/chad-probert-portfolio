@@ -59,7 +59,7 @@ export const About = () => {
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div
           ref={cardRef}
-          className="about-card reveal-on-scroll rounded-3xl border border-border/60 bg-[var(--background)]/80 px-6 py-12 text-center shadow-md shadow-black/10 backdrop-blur-sm sm:px-12 sm:py-16"
+          className="about-card reveal-on-scroll rounded-3xl bg-[var(--background)]/80 px-6 py-12 text-center backdrop-blur-sm sm:px-12 sm:py-16"
         >
           <header className="flex flex-col items-center gap-4">
             <span className="about-chip inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium text-muted-foreground">

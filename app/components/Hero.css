@@ -66,7 +66,7 @@
   pointer-events: none;
 }
 
-.call-to-action:hover {
+.dark .call-to-action:hover {
   /* Mirror light-mode hover lift while keeping dark palette */
   border-color: rgba(255, 255, 255, 0.45);
   background: rgba(68, 68, 68, 0.35);
