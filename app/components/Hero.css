@@ -6,8 +6,6 @@
 .call-to-action:hover {
   background: var(--hover-background-color);
   color: var(--hover-foreground-color);
-  /* raise the button higher when hovered over */
-  transform: translateY(-2px);
 }
 
 .fade-in-5 {

@@ -6,6 +6,5 @@
 .demo-button:hover {
   background: var(--hover-background-color);
   color: var(--hover-foreground-color);
-  transform: translateY(-2px);
   transition: all 0.4s ease-in-out;
 }
