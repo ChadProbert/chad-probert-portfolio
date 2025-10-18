@@ -1,3 +1,27 @@
+.hero-surface {
+  position: relative;
+}
+
+.hero-glow {
+  position: absolute;
+  inset: -30% -20% auto -20%;
+  height: 60%;
+  background: radial-gradient(circle at top, rgba(42, 255, 4, 0.607), transparent 60%),
+    radial-gradient(circle at 20% 40%, rgba(18, 58, 255, 0.848), transparent 55%),
+    radial-gradient(circle at 80% 20%, rgb(34, 248, 241), transparent 60%);
+  filter: blur(64px);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.hero-surface::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
 .call-to-action {
   background-color: var(--button-color);
   color: var(--button-text);

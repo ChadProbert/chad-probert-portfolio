@@ -27,17 +27,15 @@ export const Navbar = () => {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full overflow-x-clip transition-transform duration-300 ${
-        isScrolled ? "backdrop-blur-lg bg-background/100" : "bg-background"
-      }`}
+      className="sticky top-0 z-50 w-full overflow-x-clip transition-transform duration-300"
     >
-      <div className="container mx-auto">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <nav
-          className={`flex items-center justify-between px-4 lg:px-8 transition-all duration-300 ${
+          className={`flex items-center justify-between transition-all duration-300 ${
             isScrolled ? "py-6" : "py-4 sm:py-12"
           }`}
         >
-          <div className="flex lg:hidden">
+          <div className="flex flex-1 lg:hidden">
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
@@ -51,20 +49,23 @@ export const Navbar = () => {
               />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-40">
-            {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-xl font-semibold hover:cursor-pointer tracking-wider"
-              >
-                <span className="sr-only">{item.name}</span>
-                {item.name}
-              </a>
-            ))}
-          </div>
-          <div className="lg:flex lg:flex-1 lg:justify-end">
+          <div className="flex flex-1 justify-end lg:hidden">
             <ThemeToggleButton />
+          </div>
+          <div className="hidden lg:flex lg:w-full lg:justify-center">
+            <div className="inline-flex items-center gap-6 rounded-full border border-border/60 bg-background/75 px-5 py-2 shadow-sm backdrop-blur">
+              {navigation.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-sm font-medium tracking-wide text-foreground/75 transition-colors hover:text-foreground"
+                >
+                  {item.name}
+                </a>
+              ))}
+              <span className="h-6 w-px bg-border/60" aria-hidden="true" />
+              <ThemeToggleButton />
+            </div>
           </div>
         </nav>
       </div>

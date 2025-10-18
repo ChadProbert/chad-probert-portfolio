@@ -14,7 +14,3 @@
   display: none;
 }
 
-.theme-toggle-button .sun-icon,
-.theme-toggle-button .moon-icon {
-  stroke: var(--foreground);
-}
