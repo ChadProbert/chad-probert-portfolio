@@ -8,10 +8,6 @@
   color: var(--hover-foreground-color);
 }
 
-.fade-in-5 {
-  animation: fadeIn 1s ease-in-out;
-}
-
 /* Scroll-triggered reveal utility */
 .reveal-on-scroll {
   opacity: 0;
