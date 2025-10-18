@@ -1,13 +1,37 @@
 "use client";
-import Image from "next/image";
+
 import { useEffect, useRef } from "react";
+import { ChartNoAxesCombined, Sparkles, SearchCheck } from "lucide-react";
+import "./About.css";
+
+/* Nested card content */
+const highlights = [
+  {
+    title: "Scalability mindset",
+    description:
+      "From database storage to reusable front-end components, I build foundations that scale with the founder's ambitions.",
+    Icon: ChartNoAxesCombined,
+  },
+  {
+    title: "10x Your web presence",
+    description:
+      "From semantic UI to topic-cluster blogs, I focus on accessibility and SEO that outperforms your competitors.",
+    Icon: SearchCheck,
+  },
+  {
+    title: "Strategic iterations",
+    description:
+      "Whether it's a simple button-color change, or a psychology-driven feature to boost conversions, I optimize with intention.",
+    Icon: Sparkles,
+  },
+];
 
 export const About = () => {
-  // Scroll-triggered reveal
-  const revealRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
 
+  /* For reveal-on-scroll animation */
   useEffect(() => {
-    const el = revealRef.current;
+    const el = cardRef.current;
     if (!el) return;
 
     const observer = new IntersectionObserver(
@@ -15,7 +39,6 @@ export const About = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
-            // Once visible, we can stop observing to avoid retriggering
             observer.unobserve(entry.target);
           }
         });
@@ -28,52 +51,50 @@ export const About = () => {
   }, []);
 
   return (
-    <div className="mb-30 lg:mb-50">
-      <h2
-        id="about"
-        className="text-3xl font-bold sm:text-5xl var(--foreground) mb-10 lg:mb-20 text-center tracking-wide"
-      >
-        About Me
-      </h2>
-      <div
-        ref={revealRef}
-        className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-6 reveal-on-scroll"
-      >
-        <div className="flex flex-col items-center justify-center bg-card p-12 w-[90vw] max-w-3xl rounded-3xl border-1 lg:self-stretch">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10">
-            <Image
-              src="/about-icon.svg"
-              alt="About Icon"
-              width={100}
-              height={100}
-            />
-            <p className="text-center md:text-left sm:text-lg sm:max-w-3xl mt-5">
-              I am on a mission to channel my curiosity for technological
-              advancement into creating and maintaining websites, web
-              applications, and software that people can truly immerse
-              themselves in and enjoy using.
+    <section
+      id="about"
+      aria-labelledby="about-heading"
+      className="about-section mb-30 lg:mb-50"
+    >
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div
+          ref={cardRef}
+          className="about-card reveal-on-scroll rounded-3xl border border-border/60 bg-[var(--background)]/80 px-6 py-12 text-center shadow-md shadow-black/10 backdrop-blur-sm sm:px-12 sm:py-16"
+        >
+          <header className="flex flex-col items-center gap-4">
+            <span className="about-chip inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium text-muted-foreground">
+              <span aria-hidden className="about-chip__dot" />
+              About Me
+            </span>
+            <h2
+              id="about-heading"
+              className="text-balance text-3xl font-semibold tracking-tight sm:text-5xl"
+            >
+              Shipping immersive digital experiences to users.
+            </h2>
+            <p className="max-w-3xl text-balance text-base text-muted-foreground sm:text-lg">
+              I design and ship React/Next.js products that are blazing fast, rank well in search, and are intuitive to use.
             </p>
-          </div>
-        </div>
+          </header>
 
-        <div className="experience-container hidden md:flex flex-col items-center justify-center bg-card p-10 w-full lg:w-[25%] rounded-3xl border-1 lg:self-stretch">
-          <div className="experience-content flex flex-col items-center gap-3 sm:text-center">
-            <div className="flex items-center justify-center">
-              <Image
-                src="/experience-icon.svg"
-                alt="Experience Icon"
-                width={90}
-                height={90}
-              />
-            </div>
-            <div className="flex items-center justify-center">
-              <p className="text-center sm:text-2xl font-normal">
-                Years Experience
-              </p>
-            </div>
+          <div className="about-grid mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {highlights.map(({ title, description, Icon }) => (
+              <article
+                key={title}
+                className="about-highlight flex h-full flex-col gap-3 rounded-2xl border border-border/60 bg-[var(--background)]/70 p-6 text-left shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-foreground/40 hover:shadow-lg hover:shadow-black/10"
+              >
+                <span className="about-highlight__icon inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-foreground/10 text-foreground">
+                  <Icon className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <h3 className="text-base font-semibold text-foreground">
+                  {title}
+                </h3>
+                <p className="text-sm text-muted-foreground">{description}</p>
+              </article>
+            ))}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

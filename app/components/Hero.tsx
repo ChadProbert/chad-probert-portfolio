@@ -1,4 +1,4 @@
-import { Download, Mail, Zap } from "lucide-react";
+import { PhoneOutgoing } from "lucide-react";
 import "./Hero.css";
 
 export const Hero = () => {
@@ -31,21 +31,13 @@ export const Hero = () => {
               </p>
             </div>
 
-            <div className="hero-actions flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-              <a
-                href="/downloads/Chad_Probert_Web_Developer.pdf"
-                className="call-to-action inline-flex items-center gap-2 rounded-2xl px-6 py-3 text-base font-medium transition-all duration-300"
-                download
-              >
-                <Download className="h-5 w-5" strokeWidth={2} />
-                Download CV
-              </a>
+            <div className="mt-10 hero-actions flex flex-wrap items-center justify-center gap-3 sm:gap-4">
               <a
                 href="#contact"
                 className="inline-flex items-center gap-2 rounded-2xl border px-6 py-3 text-base font-medium transition-colors duration-300 hover:bg-foreground/5"
               >
-                <Mail className="h-5 w-5" strokeWidth={2} />
-                Contact me
+                <PhoneOutgoing className="mr-1 h-5 w-5" strokeWidth={2} />
+                Get in Touch
               </a>
             </div>
           </header>

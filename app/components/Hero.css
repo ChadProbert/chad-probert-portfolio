@@ -3,15 +3,18 @@
 }
 
 .hero-status {
-  position: relative;
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.35));
-  border: 1px solid rgba(255, 255, 255, 0.797);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.4));
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -0.5px 0 rgba(255, 255, 255, 0.3),
+    0 10px 25px rgba(15, 23, 42, 0.12);
+  backdrop-filter: blur(12px);
 }
 
 .dark .hero-status {
-  background: #000000;
-  border: 1px solid #000000;
-  
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.7));
+  background: linear-gradient(120deg, rgba(42, 42, 42, 0.65), rgba(30, 30, 30, 0.35));  
 }
 
 .hero-status::before {
@@ -47,6 +50,12 @@
   filter: blur(64px);
   opacity: 0.9;
   pointer-events: none;
+}
+
+.dark .hero-glow {
+  background: radial-gradient(circle at top, rgba(164, 164, 164, 0.507), transparent 60%),
+    radial-gradient(circle at 20% 40%, rgba(37, 37, 37, 0.648), transparent 55%),
+    radial-gradient(circle at 80% 20%, rgb(32, 32, 32), transparent 60%);
 }
 
 .hero-surface::after {
