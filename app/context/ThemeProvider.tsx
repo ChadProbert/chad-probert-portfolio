@@ -5,20 +5,28 @@ import { ThemeContext } from "./ThemeContext";
 
 interface ThemeProviderProps {
   children: ReactNode;
+  initialTheme?: "light" | "dark";
 }
 
-export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
+export const ThemeProvider: React.FC<ThemeProviderProps> = ({
+  children,
+  initialTheme = "light",
+}) => {
   const [theme, setTheme] = useState<"light" | "dark">(() => {
-    // Initialize from localStorage or system preference if available
-    if (typeof window !== "undefined") {
-      const stored = window.localStorage.getItem("theme");
-      if (stored === "light" || stored === "dark") return stored;
-      const prefersDark = window.matchMedia?.(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-      return prefersDark ? "dark" : "light";
-    }
-    return "light";
+    if (typeof window === "undefined") return initialTheme;
+
+    const persisted = window.localStorage.getItem("theme");
+    if (persisted === "light" || persisted === "dark") return persisted;
+
+    // Respect the theme raised by the hydration script.
+    if (document.documentElement.classList.contains("dark")) return "dark";
+    const datasetTheme = document.documentElement.dataset.theme;
+    if (datasetTheme === "light" || datasetTheme === "dark") return datasetTheme;
+
+    const prefersDark = window.matchMedia?.(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    return prefersDark ? "dark" : "light";
   });
 
   const toggleTheme = () => {
@@ -32,6 +40,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     } else {
       document.documentElement.classList.remove("dark");
     }
+    document.documentElement.dataset.theme = theme;
     // Persist the preference
     try {
       window.localStorage.setItem("theme", theme);
