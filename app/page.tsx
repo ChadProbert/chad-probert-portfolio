@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
@@ -6,6 +5,7 @@ import { Skills } from "@/components/skills/Skills";
 import { Projects } from "@/components/Projects";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { HeroRocketImage } from "@/components/HeroRocketImage";
 
 export default function Home() {
   return (
@@ -20,13 +20,7 @@ export default function Home() {
             <div className="order-1 hidden lg:block lg:order-2">
               <div className="relative flex items-center justify-end">
                 <div className="absolute z-10">
-                  <Image
-                    src="/rocket.svg"
-                    alt="Rocket icon - Chad Probert"
-                    width={360}
-                    height={360}
-                    className="z-0 fade-in-5"
-                  />
+                  <HeroRocketImage />
                 </div>
               </div>
             </div>
