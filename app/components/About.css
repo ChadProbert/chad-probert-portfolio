@@ -11,8 +11,8 @@
 .about-card::before {
   content: "";
   position: absolute;
-  inset: -30% -20% auto -20%;
-  height: 55%; /* Controls the size of the blur effect */
+  inset: 60% -20% auto -20%;
+  height: 50%; /* Controls the size of the blur effect */
   background: radial-gradient(
       circle at top,
       rgba(42, 255, 4, 0.607),
@@ -27,6 +27,11 @@
   filter: blur(72px);
   opacity: 0.9;
   pointer-events: none;
+}
+
+.dark .about-card::before {
+  inset: 40% -20% auto -20%;
+  height: 100%; /* Controls the size of the blur effect in dark mode */
 }
 
 .about-card::after {
