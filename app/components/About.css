@@ -68,8 +68,17 @@
   position: relative;
 }
 
+.about-highlight:hover {
+  /* Subtle lift and tint for light mode to match dark treatment */
+  background: rgba(255, 255, 255, 0.82);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.14);
+}
+
 .about-highlight__icon {
-  backdrop-filter: blur(8px);
+  background: transparent;
+  border-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: none;
 }
 
 /* About Me nested cards (dark mode) */
@@ -89,6 +98,7 @@
 .dark .about-highlight__icon {
   background: rgba(0, 0, 0, 0);
   border-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
 }
 
 /* Gradient blur effect (dark mode) */

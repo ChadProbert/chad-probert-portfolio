@@ -63,7 +63,7 @@ export const About = () => {
         >
           <header className="flex flex-col items-center gap-4">
             <span className="about-chip inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium text-muted-foreground">
-              <span aria-hidden className="about-chip__dot" />
+              <span aria-hidden className="about-chip__dot animate-pulse" />
               About Me
             </span>
             <h2
@@ -81,9 +81,9 @@ export const About = () => {
             {highlights.map(({ title, description, Icon }) => (
               <article
                 key={title}
-                className="about-highlight flex h-full flex-col gap-3 rounded-2xl border border-border/60 bg-[var(--background)]/70 p-6 text-left shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-foreground/40 hover:shadow-lg hover:shadow-black/10"
+                className="about-highlight flex h-full flex-col gap-3 rounded-2xl border border-border/60 bg-[var(--background)]/70 p-6 text-left shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-white hover:shadow-lg hover:shadow-black/10"
               >
-                <span className="about-highlight__icon inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-foreground/10 text-foreground">
+                <span className="about-highlight__icon inline-flex h-10 w-10 items-center justify-center rounded-full border text-foreground">
                   <Icon className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <h3 className="text-base font-semibold text-foreground">
