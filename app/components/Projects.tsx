@@ -84,25 +84,22 @@ const ProjectCard = ({
       <div
         className={`w-full max-w-md ${previewSide === "left" ? "lg:order-1" : "lg:order-2"}`}
       >
-        <div className="group w-full h-44 sm:h-52 md:h-56 lg:h-48 xl:h-56 rounded-sm bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 relative overflow-hidden transform transition-transform duration-300 ease-out hover:scale-[1.10]">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="grid grid-cols-3 gap-2 opacity-80">
-              <a
-                href={demoUrl ?? repoUrl ?? "#projects"}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src={previewImage}
-                  alt={previewAlt}
-                  className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-110"
-                  sizes="(max-width: 1024px) 100vw, 420px"
-                  fill
-                  priority={title === "Celerity - New Tab Page"}
-                />
-              </a>
-            </div>
-          </div>
+        <div className="group relative w-full h-44 sm:h-52 md:h-56 lg:h-48 xl:h-56 overflow-hidden rounded-sm bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700">
+          <a
+            href={demoUrl ?? repoUrl ?? "#projects"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block h-full w-full relative"
+          >
+            <Image
+              src={previewImage}
+              alt={previewAlt}
+              className="object-cover transition-transform duration-300 ease-out group-hover:scale-110"
+              sizes="(max-width: 1024px) 100vw, 420px"
+              fill
+              priority={title === "Celerity - New Tab Page"}
+            />
+          </a>
         </div>
       </div>
 
