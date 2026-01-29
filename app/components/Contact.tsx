@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { Mail, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const CONTACT_SCHEMA = {
   "@context": "https://schema.org",
@@ -78,13 +78,13 @@ export const Contact = () => {
       )
       .then(
         () => {
-          setStatus("Message sent successfully! 🚀");
+          setStatus("Message sent successfully! 🎉");
           setLoading(false);
           form.reset();
         },
         (error) => {
           console.error(error);
-          setStatus("Failed to send message. Try again.");
+          setStatus("Failed to send message. Please try again.");
           setLoading(false);
         }
       );
@@ -100,31 +100,43 @@ export const Contact = () => {
           Let&apos;s build impactful digital experiences.
         </p>
 
-        <div className="mt-10 rounded-2xl border p-6 sm:p-16 bg-card shadow-lg">
+        <div className="mt-10 rounded-2xl border p-6 sm:p-16 bg-card">
           <form onSubmit={sendEmail} className="space-y-5">
+            {status && (
+              <div
+                className={`justify-center flex p-3 rounded-sm text-lg border-2 ${
+                  status === "Message sent successfully! 🎉"
+                    ? "bg-green-100 border-green-600 text-green-600"
+                    : "bg-red-200 border-red-600 text-red-600"
+                } transition-all`}
+              >
+                {status}
+              </div>
+            )}
+
             <div>
               <label htmlFor="name" className="mb-1 block text-md font-medium">
-                Name*
+                Name *
               </label>
               <input
                 id="name"
                 name="name"
                 type="text"
                 placeholder="Your name"
-                className="w-full rounded border px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-1 focus:ring-foreground/100 bg-[var(--input-background)]"
+                className="w-full rounded border-2 px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-2 focus:ring-foreground/100 bg-[var(--input-background)]"
               />
             </div>
 
             <div>
               <label htmlFor="email" className="mb-1 block text-md font-medium">
-                Email*
+                Email *
               </label>
               <input
                 id="email"
                 name="email"
                 type="email"
                 placeholder="you@domain.com"
-                className="w-full rounded border px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-1 focus:ring-foreground/100 bg-[var(--input-background)]"
+                className="w-full rounded border-2 px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-2 focus:ring-foreground/100 bg-[var(--input-background)]"
               />
             </div>
 
@@ -133,28 +145,16 @@ export const Contact = () => {
                 htmlFor="message"
                 className="mb-1 block text-md font-medium"
               >
-                Message*
+                Message *
               </label>
               <textarea
                 id="message"
                 name="message"
                 rows={5}
                 placeholder="What would you like to chat about?"
-                className="w-full resize-y rounded border px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-1 focus:ring-foreground/100 bg-[var(--input-background)]"
+                className="w-full resize-y rounded border-2 px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-2 focus:ring-foreground/100 bg-[var(--input-background)]"
               />
             </div>
-
-            {status && (
-              <div
-                className={`justify-center flex mt-2 p-3 rounded-sm mb-5 text-lg border ${
-                  status === "Message sent successfully! 🚀"
-                    ? "bg-green-200 border-green-600 text-green-600"
-                    : "bg-red-200 border-red-600 text-red-600"
-                } transition-all`}
-              >
-                {status}
-              </div>
-            )}
 
             <div className="flex flex-col space-y-4 pt-2">
               <div className="flex items-center justify-end gap-3 flex-wrap max-[500px]:justify-center max-[405px]:gap-2">
@@ -175,14 +175,35 @@ export const Contact = () => {
                   aria-label="Send an email to Chad"
                   className="inline-flex items-center rounded-xl border px-4 py-2.5 text-md transition hover:bg-foreground/5 max-[405px]:px-2 max-[405px]:py-2 max-[405px]:text-sm"
                 >
-                  <Mail className="mr-2 h-5 w-5 max-[405px]:mr-1.5 max-[405px]:h-4 max-[405px]:w-4" />
+                  <ArrowUpRight className="mr-2 h-5 w-5 text-[var(--foreground)] max-[405px]:mr-1.5 max-[405px]:h-4 max-[405px]:w-4" />
                   Email
                 </a>
                 <button
                   type="submit"
-                  className="call-to-action cursor-pointer inline-flex items-center rounded-xl px-8 py-2.5 text-md transition-all duration-400 max-[405px]:px-5 border max-[405px]:py-2 max-[405px]:text-sm"
+                  className="call-to-action cursor-pointer inline-flex items-center rounded-xl px-7 py-2.5 text-md transition-all duration-400 hover:bg-foreground/5 max-[405px]:px-4 border max-[405px]:py-2 max-[405px]:text-sm"
                 >
-                  {loading ? "Sending..." : "Send"}
+                  {loading ? (
+                    "Sending..."
+                  ) : (
+                    <>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="mr-1.5 h-4 w-4"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
+                        <path d="m21.854 2.147-10.94 10.939" />
+                      </svg>
+                      Send
+                    </>
+                  )}
                 </button>
               </div>
             </div>
