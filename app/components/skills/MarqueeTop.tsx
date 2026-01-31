@@ -166,7 +166,7 @@ export const MarqueeTop = () => {
   const { theme } = useContext(ThemeContext);
   return (
     <div className="mb-8">
-      <Marquee className="flex items-center mx-auto justify-center w-[50%]">
+      <Marquee className="flex items-center mx-auto justify-center w-[92%] sm:w-[80%] lg:w-[1000px]">
         <MarqueeFade side="left" />
         <MarqueeFade side="right" />
         <MarqueeContent direction="left" speed={60}>

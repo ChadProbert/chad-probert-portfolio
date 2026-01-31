@@ -155,7 +155,7 @@ export const MarqueeBottom = () => {
 
   return (
     <div>
-      <Marquee className="flex items-center mx-auto justify-center w-[50%]">
+      <Marquee className="flex items-center mx-auto justify-center w-[92%] sm:w-[80%] lg:w-[1000px]">
         <MarqueeFade side="left" />
         <MarqueeFade side="right" />
         <MarqueeContent direction="right" speed={60}>

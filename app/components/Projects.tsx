@@ -75,7 +75,7 @@ const ProjectCard = ({
       <div
         className={`w-full max-w-md ${previewSide === "left" ? "lg:order-1" : "lg:order-2"}`}
       >
-        <div className="group relative w-full h-44 sm:h-52 md:h-56 lg:h-48 xl:h-56 overflow-hidden rounded-sm bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700">
+        <div className="group relative w-full h-44 sm:h-52 md:h-56 lg:h-48 xl:h-56 overflow-hidden bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700">
           <a
             href={demoUrl ?? repoUrl ?? "#projects"}
             target="_blank"

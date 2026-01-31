@@ -60,6 +60,9 @@
   background: radial-gradient(circle at top, rgba(255, 159, 64, 0.75), transparent 85%),
     radial-gradient(circle at 35% 40%, rgba(255, 128, 0, 0.6), transparent 80%),
     radial-gradient(circle at 75% 25%, rgba(255, 187, 92, 0.55), transparent 85%);
+  background-size: 140% 140%;
+  background-position: 50% 0%;
+  animation: none;
   filter: blur(150px);
   opacity: 0.9;
   pointer-events: none;
@@ -70,7 +73,11 @@
   background: radial-gradient(circle at top, rgba(255, 159, 64, 0.35), transparent 85%),
     radial-gradient(circle at 35% 40%, rgba(255, 128, 0, 0.28), transparent 80%),
     radial-gradient(circle at 75% 25%, rgba(255, 187, 92, 0.25), transparent 85%);
+  background-size: 140% 140%;
+  background-position: 50% 0%;
+  animation: none;
 }
+
 
 .hero-surface::after {
   content: "";

@@ -69,7 +69,7 @@ export const About = () => {
               Shipping immersive digital experiences to users.
             </h2>
             <p className="max-w-3xl text-balance text-base text-muted-foreground sm:text-lg">
-              I design and ship React/Next.js products that are blazing fast, rank well in search, and are intuitive to use.
+              I design and ship React/Next.js solutions that are fast, intuitive, and rank well in Google Search
             </p>
           </header>
 
