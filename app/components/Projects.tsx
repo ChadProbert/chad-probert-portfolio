@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight, Github, Award } from "lucide-react";
 import "./Projects.css";
 import Image from "next/image";
 
@@ -25,15 +25,6 @@ const projects: Project[] = [
     previewSide: "right",
     previewImage: "/project-images/Celerity.png",
     previewAlt: "Screenshot of the Celerity custom new tab page designed by Chad Probert",
-  },
-  {
-    title: "Dev Trends",
-    description:
-      "A user-centric web app that consumes the DEV Community API to surface trending development articles with category filters and favourites.",
-    repoUrl: "https://github.com/ChadProbert/dev-trends",
-    previewSide: "left",
-    previewImage: "/project-images/Devtrends.png",
-    previewAlt: "Screenshot of the Dev Trends article dashboard built by Chad Probert",
   },
 ];
 
@@ -106,7 +97,10 @@ const ProjectCard = ({
       <div
         className={`flex flex-col gap-3 ${previewSide === "left" ? "lg:order-2" : "lg:order-1"}`}
       >
-        <span className="text-sm font-medium mb-0">Featured Project</span>
+        <span className="text-sm font-medium text-muted-foreground mb-0 inline-flex items-center gap-2">
+          <Award className="h-4 w-4 text-orange-500" aria-hidden="true" />
+          Featured Project
+        </span>
         <h3
           id={headingId}
           className="text-2xl sm:text-3xl font-semibold tracking-wide mb-3"
@@ -114,7 +108,7 @@ const ProjectCard = ({
         >
           {title}
         </h3>
-        <p className="text-base mb-2 sm:w-[50%] lg:w-[75%]" itemProp="description">
+        <p className="text-base text-muted-foreground mb-2 sm:w-[50%] lg:w-[75%]" itemProp="description">
           {description}
         </p>
         <div className="mt-2 flex items-center gap-2">
@@ -134,7 +128,7 @@ const ProjectCard = ({
               href={repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-xl border-1 hover:bg-foreground/5 px-4 py-2 text-base transition-colors duration-400"
+              className="inline-flex items-center rounded-xl border-1 px-4 py-2 text-base transition-colors duration-400"
               itemProp="sameAs"
             >
               <Github className="mr-2 h-4 w-4" /> Repository
@@ -170,17 +164,17 @@ export const Projects = () => {
   return (
     <section
       id="projects"
-      className="mb-30 lg:mb-50"
+      className="mb-40"
       aria-labelledby="projects-heading"
     >
       <h2
         id="projects-heading"
-        className="text-3xl font-bold sm:text-5xl var(--foreground) mb-10 lg:mb-20 text-center tracking-wide"
+        className="mt-32 text-3xl font-medium sm:text-5xl var(--foreground) text-center tracking-wide"
       >
         Projects
       </h2>
 
-      <div>
+      <div className="mt-10 lg:mt-20">
         <div className="mx-auto flex max-w-6xl flex-col gap-10 lg:gap-20">
           {projects.map((project) => (
             <ProjectCard key={project.title} {...project} />
