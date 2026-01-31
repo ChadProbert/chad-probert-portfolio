@@ -155,10 +155,10 @@ export const MarqueeBottom = () => {
 
   return (
     <div>
-      <Marquee className="flex items-center mx-auto justify-center w-[78%]">
+      <Marquee className="flex items-center mx-auto justify-center w-[50%]">
         <MarqueeFade side="left" />
         <MarqueeFade side="right" />
-        <MarqueeContent direction="right" speed={100}>
+        <MarqueeContent direction="right" speed={60}>
           {theme === "light"
             ? SKILLS_LIGHT.map((skill, index) => (
                 <MarqueeItem className="h-16 w-16 lg:h-32 lg:w-32" key={index}>
