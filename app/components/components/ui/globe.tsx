@@ -9,6 +9,11 @@ import { ThemeContext } from "@/context/ThemeContext"
 
 const MOVEMENT_DAMPING = 1400
 
+const WHITE: [number, number, number] = [1, 1, 1]
+const DARK_BASE: [number, number, number] = [0.08, 0.08, 0.08]
+const DARK_GLOW: [number, number, number] = [0.25, 0.25, 0.25]
+const ORANGE: [number, number, number] = [251 / 255, 100 / 255, 21 / 255]
+
 const GLOBE_CONFIG: COBEOptions = {
   width: 800,
   height: 800,
@@ -20,9 +25,9 @@ const GLOBE_CONFIG: COBEOptions = {
   diffuse: 0.4,
   mapSamples: 16000,
   mapBrightness: 1.2,
-  baseColor: [1, 1, 1],
-  markerColor: [251 / 255, 100 / 255, 21 / 255],
-  glowColor: [1, 1, 1],
+  baseColor: WHITE,
+  markerColor: ORANGE,
+  glowColor: WHITE,
   markers: [
     { location: [14.5995, 120.9842], size: 0.03 },
     { location: [19.076, 72.8777], size: 0.1 },
@@ -63,8 +68,8 @@ export function Globe({
       return {
         ...config,
         dark: 1,
-        baseColor: [0.08, 0.08, 0.08],
-        glowColor: [0.25, 0.25, 0.25],
+        baseColor: DARK_BASE,
+        glowColor: DARK_GLOW,
         mapBrightness: 3,
         mapBaseBrightness: 0.1,
         diffuse: 0.6,
@@ -74,8 +79,8 @@ export function Globe({
     return {
       ...config,
       dark: 0,
-      baseColor: [1, 1, 1],
-      glowColor: [1, 1, 1],
+      baseColor: WHITE,
+      glowColor: WHITE,
       mapBrightness: 1.2,
       diffuse: 0.4,
     }
