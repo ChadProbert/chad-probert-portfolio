@@ -10,7 +10,7 @@ export const ThemeToggleButton = () => {
     <button
       onClick={toggleTheme}
       aria-label="Toggle dark mode"
-      className="theme-toggle-button rounded-4xl text-foreground/80 hover:cursor-pointer focus:outline-none hover:bg-foreground/5 transition-colors duration-400"
+      className="theme-toggle-button rounded-lg bg-transparent p-2.5 text-foreground/75 hover:text-foreground hover:cursor-pointer focus:outline-none transition-colors duration-400"
     >
       <Sun className="sun-icon" size={18} strokeWidth={2.5} />
       <Moon className="moon-icon" size={18} strokeWidth={2.5} />

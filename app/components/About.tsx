@@ -54,21 +54,17 @@ export const About = () => {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="about-section mb-30 lg:mb-50"
+      className="about-section mb-30"
     >
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div
           ref={cardRef}
-          className="about-card reveal-on-scroll rounded-3xl bg-[var(--background)]/80 px-6 py-12 text-center backdrop-blur-sm sm:px-12 sm:py-16"
+          className="about-card reveal-on-scroll rounded-3xl bg-[var(--background)] px-6 py-12 text-center sm:px-12 sm:py-16"
         >
           <header className="flex flex-col items-center gap-4">
-            <span className="about-chip inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium text-muted-foreground">
-              <span aria-hidden className="about-chip__dot animate-pulse" />
-              About Me
-            </span>
             <h2
               id="about-heading"
-              className="text-balance text-3xl font-semibold tracking-tight sm:text-5xl"
+              className="mt-20 text-balance text-3xl font-medium tracking-tight sm:text-5xl"
             >
               Shipping immersive digital experiences to users.
             </h2>
@@ -81,9 +77,9 @@ export const About = () => {
             {highlights.map(({ title, description, Icon }) => (
               <article
                 key={title}
-                className="about-highlight flex h-full flex-col gap-3 rounded-2xl border border-border/60 bg-[var(--background)]/70 p-6 text-left shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-white hover:shadow-lg hover:shadow-black/10"
+                className="about-highlight flex h-full flex-col gap-3 rounded-2xl border border-border/60 p-6 text-left backdrop-blur-sm transition-all duration-300"
               >
-                <span className="about-highlight__icon inline-flex h-10 w-10 items-center justify-center rounded-full border text-foreground">
+                <span className="about-highlight__icon inline-flex h-10 w-10 items-center justify-center rounded-full border text-orange-500">
                   <Icon className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <h3 className="text-base font-semibold text-foreground">

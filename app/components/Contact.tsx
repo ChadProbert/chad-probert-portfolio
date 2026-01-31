@@ -3,6 +3,7 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { ArrowUpRight } from "lucide-react";
+import { BorderBeam } from "@/components/components/ui/border-beam";
 
 const CONTACT_SCHEMA = {
   "@context": "https://schema.org",
@@ -91,16 +92,32 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="mb-24">
+    <section id="contact" className="">
       <div className="mx-auto max-w-4xl lg:max-w-5xl px-4 sm:px-6">
-        <h2 className="text-3xl sm:text-5xl font-bold tracking-wide text-center mb-6">
+        <h2 className="text-3xl sm:text-5xl font-medium tracking-wide text-center mb-6">
           Get in Touch
         </h2>
-        <p className="text-center text-lg sm:text-3xl mb-6">
+        <p className="text-center text-lg text-muted-foreground sm:text-3xl mb-6">
           Let&apos;s build impactful digital experiences.
         </p>
 
-        <div className="mt-10 rounded-2xl border p-6 sm:p-16 bg-card">
+        <div className="relative mt-10 overflow-hidden rounded-2xl border border-border bg-card p-6 sm:p-16">
+          <BorderBeam
+            borderWidth={2}
+            size={200}
+            colorFrom="#ffb347"
+            colorTo="#ff8c42"
+            duration={8}
+            initialOffset={0}
+          />
+          <BorderBeam
+            borderWidth={2}
+            size={200}
+            colorFrom="#ffb347"
+            colorTo="#ff8c42"
+            duration={8}
+            initialOffset={150}
+          />
           <form onSubmit={sendEmail} className="space-y-5">
             {status && (
               <div
@@ -163,7 +180,7 @@ export const Contact = () => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Connect with Chad on LinkedIn"
-                  className="inline-flex items-center rounded-xl border px-4 py-2.5 text-md transition hover:bg-foreground/5 max-[405px]:px-2 max-[405px]:py-2 max-[405px]:text-sm"
+                  className="inline-flex items-center rounded-xl border px-4 py-2.5 text-md transition max-[405px]:px-2 max-[405px]:py-2 max-[405px]:text-sm"
                 >
                   <ArrowUpRight className="mr-2 h-5 w-5 text-[var(--foreground)] max-[405px]:mr-1.5 max-[405px]:h-4 max-[405px]:w-4" />
                   LinkedIn
@@ -173,14 +190,14 @@ export const Contact = () => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Send an email to Chad"
-                  className="inline-flex items-center rounded-xl border px-4 py-2.5 text-md transition hover:bg-foreground/5 max-[405px]:px-2 max-[405px]:py-2 max-[405px]:text-sm"
+                  className="inline-flex items-center rounded-xl border px-4 py-2.5 text-md transition max-[405px]:px-2 max-[405px]:py-2 max-[405px]:text-sm"
                 >
                   <ArrowUpRight className="mr-2 h-5 w-5 text-[var(--foreground)] max-[405px]:mr-1.5 max-[405px]:h-4 max-[405px]:w-4" />
                   Email
                 </a>
                 <button
                   type="submit"
-                  className="call-to-action cursor-pointer inline-flex items-center rounded-xl px-7 py-2.5 text-md transition-all duration-400 hover:bg-foreground/5 max-[405px]:px-4 border max-[405px]:py-2 max-[405px]:text-sm"
+                  className="call-to-action cursor-pointer inline-flex items-center rounded-xl bg-[var(--background)]/90 pr-7 pl-5 py-2.5 text-md text-foreground transition-all duration-400 max-[405px]:px-4 border max-[405px]:py-2 max-[405px]:text-sm"
                 >
                   {loading ? (
                     "Sending..."

@@ -94,10 +94,23 @@
 body {
   font-family: var(--font-geist), sans-serif;
   background-color: var(--background);
+  overflow-x: hidden;
+}
+
+.page-bleed {
+  position: relative;
+  overflow: hidden;
+}
+
+
+.page-bleed > * {
+  position: relative;
+  z-index: 1;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* Enforce proper spacing for anchor links to account for dynamic header */

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { X, Menu } from "lucide-react";
 import { ThemeToggleButton } from "./ThemeToggleButton";
@@ -16,25 +16,11 @@ const navigation = [
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 0);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
-    <header
-      className="sticky top-0 z-50 w-full overflow-x-clip transition-transform duration-300"
-    >
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <nav
-          className={`flex items-center justify-between transition-all duration-300 ${
-            isScrolled ? "py-6" : "py-4 sm:py-12"
-          }`}
-        >
+    <header className="fixed top-0 left-0 z-50 w-full overflow-x-clip transition-transform duration-300">
+      <div className="w-full">
+        <nav className="flex items-center justify-between">
           <div className="flex flex-1 lg:hidden">
             <button
               type="button"
@@ -53,18 +39,23 @@ export const Navbar = () => {
             <ThemeToggleButton />
           </div>
           <div className="hidden lg:flex lg:w-full lg:justify-center">
-            <div className="inline-flex items-center gap-6 rounded-full border border-border/60 bg-background/75 px-5 py-2 shadow-sm backdrop-blur">
-              {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-sm font-medium tracking-wide text-foreground/75 transition-colors hover:text-foreground"
-                >
-                  {item.name}
-                </a>
-              ))}
-              <span className="h-6 w-px bg-border/60" aria-hidden="true" />
-              <ThemeToggleButton />
+            <div className="relative inline-flex w-full items-center border-b border-border/60 bg-background/75 py-7 shadow-sm backdrop-blur">
+              <div className="flex w-full items-center justify-center gap-8">
+                {navigation.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-lg font-normal tracking-wide text-foreground/75 transition-colors hover:text-foreground"
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+              <div className="absolute right-0 top-1/2 flex -translate-y-1/2 items-center">
+                <div className="flex items-center px-6 py-1">
+                  <ThemeToggleButton />
+                </div>
+              </div>
             </div>
           </div>
         </nav>

@@ -2,8 +2,10 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="mt-20 py-6 text-center text-sm text-black dark:text-white sm:text-lg">
-      Copyright &copy;  {currentYear} Chad Probert. All rights reserved.
+    <footer className="mt-10 border-t border-border/60 bg-card py-4 text-center text-xs font-medium text-muted-foreground shadow-sm sm:text-sm">
+      <span>
+        Copyright &copy; {currentYear} Chad Probert. All rights reserved.
+      </span>
     </footer>
   );
 };
