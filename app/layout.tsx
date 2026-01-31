@@ -77,7 +77,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <meta name="theme-color" content="#25292e" />
+        <meta name="theme-color" content="#000000" />
         <meta name="color-scheme" content="dark light" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -101,19 +101,19 @@ export default function RootLayout({
           rel="icon"
           type="image/png"
           sizes="192x192"
-          href="/android-chrome-192x192.png"
+          href="/web-app-manifest-192x192.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="512x512"
-          href="/android-chrome-512x512.png"
+          href="/web-app-manifest-512x512.png"
         />
 
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/apple-touch-icon.png"
+          href="./apple-icon.png"
         />
         <script
           type="application/ld+json"
@@ -140,7 +140,7 @@ export default function RootLayout({
                 ],
                 worksFor: {
                   "@type": "Organization",
-                  name: "Natmed Medical Defence",
+                  name: "natmed medical defence",
                 },
               },
               {
