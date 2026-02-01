@@ -19,7 +19,7 @@ export const ScrollToTop = () => {
     <button
       type="button"
       aria-label="Scroll to top"
-      className={`group fixed bottom-0 right-0 z-[9999] h-20 w-20 bg-orange-400 [clip-path:polygon(100%_0,100%_100%,0_100%)] shadow-lg transition-all duration-300 focus:outline-none focus-visible:outline-none hover:brightness-110 ${
+      className={`group fixed bottom-0 right-0 z-[9999] h-20 w-20 bg-orange-400 [clip-path:polygon(100%_0,100%_100%,0_100%)] shadow-lg transition-all duration-300 focus:outline-none focus-visible:outline-none hover:brightness-110 cursor-pointer ${
         isVisible
           ? "opacity-100 translate-x-0"
           : "opacity-0 translate-x-4 pointer-events-none"
@@ -29,7 +29,7 @@ export const ScrollToTop = () => {
       <span className="pointer-events-none absolute bottom-16 right-2 rounded-full bg-foreground px-3 py-1 text-xs font-medium text-background opacity-0 transition-opacity duration-200 group-hover:opacity-100">
         Back to top
       </span>
-      <span className="absolute bottom-2 right-2 text-white">
+      <span className="absolute bottom-2 right-2 text-white transition-transform duration-300 group-hover:scale-[0.952]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

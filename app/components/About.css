@@ -70,6 +70,10 @@
   box-shadow: none;
 }
 
+.about-highlight:hover .about-highlight__icon {
+  background: rgba(0, 0, 0, 0.01);
+}
+
 .about-highlight__icon {
   background: transparent;
   border-color: inherit;
@@ -78,7 +82,7 @@
 
 /* About Me nested cards (dark mode) */
 .dark .about-highlight {
-  border-color: rgba(45, 45, 45, 0.6);
+  border-color: rgba(255, 255, 255, 0.22);
   background: transparent;
 }
 
@@ -92,7 +96,7 @@
 /* Icon container (dark mode) */
 .dark .about-highlight__icon {
   background: rgba(0, 0, 0, 0);
-  border-color: inherit;
+  border-color: rgba(255, 255, 255, 0.28);
   backdrop-filter: blur(8px);
 }
 

@@ -93,11 +93,11 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="">
-      <div className="mx-auto max-w-4xl lg:max-w-5xl px-4 sm:px-6">
-        <h2 className="text-3xl sm:text-5xl font-medium tracking-wide text-center mb-6">
+      <div className="mx-auto max-w-3xl lg:max-w-4xl px-4 sm:px-6">
+        <h2 className="text-balance text-3xl font-medium tracking-tight sm:text-5xl text-center mb-6">
           Get in Touch
         </h2>
-        <p className="text-center text-lg text-muted-foreground sm:text-3xl mb-6">
+        <p className="text-center text-base text-muted-foreground sm:text-2xl mb-6">
           Let&apos;s build impactful digital experiences.
         </p>
 
@@ -105,16 +105,16 @@ export const Contact = () => {
           <BorderBeam
             borderWidth={2}
             size={200}
-            colorFrom="#ffb347"
-            colorTo="#ff8c42"
+            colorFrom="#fb923c"
+            colorTo="#fb923c"
             duration={8}
             initialOffset={0}
           />
           <BorderBeam
             borderWidth={2}
             size={200}
-            colorFrom="#ffb347"
-            colorTo="#ff8c42"
+            colorFrom="#fb923c"
+            colorTo="#fb923c"
             duration={8}
             initialOffset={150}
           />
@@ -139,8 +139,8 @@ export const Contact = () => {
                 id="name"
                 name="name"
                 type="text"
-                placeholder="Your name"
-                className="w-full rounded border-2 px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-2 focus:ring-foreground/100 bg-[var(--input-background)]"
+                autoComplete="off"
+                className="w-full rounded border-2 px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-2 focus:ring-black dark:focus:ring-white/60 bg-zinc-100 dark:bg-[#3a3a3a]"
               />
             </div>
 
@@ -152,8 +152,7 @@ export const Contact = () => {
                 id="email"
                 name="email"
                 type="email"
-                placeholder="you@domain.com"
-                className="w-full rounded border-2 px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-2 focus:ring-foreground/100 bg-[var(--input-background)]"
+                className="w-full rounded border-2 px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-2 focus:ring-black dark:focus:ring-white/60 bg-zinc-100 dark:bg-[#3a3a3a]"
               />
             </div>
 
@@ -168,21 +167,21 @@ export const Contact = () => {
                 id="message"
                 name="message"
                 rows={5}
-                placeholder="What would you like to chat about?"
-                className="w-full resize-y rounded border-2 px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-2 focus:ring-foreground/100 bg-[var(--input-background)]"
+                autoComplete="off"
+                className="w-full resize-y rounded border-2 px-3 py-2 outline-none transition placeholder:text-muted-foreground/70 focus:ring-2 focus:ring-black dark:focus:ring-white/60 bg-zinc-100 dark:bg-[#3a3a3a]"
               />
             </div>
 
             <div className="flex flex-col space-y-4 pt-2">
-              <div className="flex items-center justify-end gap-3 flex-wrap max-[500px]:justify-center max-[405px]:gap-2">
+              <div className="flex items-center justify-end gap-2 flex-wrap max-[500px]:justify-center max-[405px]:gap-2">
                 <a
                   href="https://www.linkedin.com/in/chad-probert-6421b321b/"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Connect with Chad on LinkedIn"
-                  className="inline-flex items-center rounded-xl border px-4 py-2.5 text-md transition max-[405px]:px-2 max-[405px]:py-2 max-[405px]:text-sm"
+                  className="inline-flex items-center rounded-md border pl-4 pr-5 py-1.5 text-md transition-colors duration-400 hover:bg-black/5 dark:hover:bg-white/5 max-[405px]:pl-4 max-[405px]:pr-5 max-[405px]:py-2 max-[405px]:text-sm"
                 >
-                  <ArrowUpRight className="mr-2 h-5 w-5 text-[var(--foreground)] max-[405px]:mr-1.5 max-[405px]:h-4 max-[405px]:w-4" />
+                  <ArrowUpRight className="mr-2 h-5 w-5 text-[var(--foreground)] max-[405px]:mr-2 max-[405px]:h-4 max-[405px]:w-4" />
                   LinkedIn
                 </a>
                 <a
@@ -190,14 +189,14 @@ export const Contact = () => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Send an email to Chad"
-                  className="inline-flex items-center rounded-xl border px-4 py-2.5 text-md transition max-[405px]:px-2 max-[405px]:py-2 max-[405px]:text-sm"
+                  className="inline-flex items-center rounded-md border pl-4 pr-5 py-1.5 text-md transition-colors duration-400 hover:bg-black/5 dark:hover:bg-white/5 max-[405px]:pl-4 max-[405px]:pr-5 max-[405px]:py-2 max-[405px]:text-sm"
                 >
-                  <ArrowUpRight className="mr-2 h-5 w-5 text-[var(--foreground)] max-[405px]:mr-1.5 max-[405px]:h-4 max-[405px]:w-4" />
+                  <ArrowUpRight className="mr-2 h-5 w-5 text-[var(--foreground)] max-[405px]:mr-2 max-[405px]:h-4 max-[405px]:w-4" />
                   Email
                 </a>
                 <button
                   type="submit"
-                  className="call-to-action cursor-pointer inline-flex items-center rounded-xl bg-[var(--background)]/90 pr-7 pl-5 py-2.5 text-md text-foreground transition-all duration-400 max-[405px]:px-4 border max-[405px]:py-2 max-[405px]:text-sm"
+                  className="call-to-action send-cta cursor-pointer inline-flex items-center gap-0 rounded-md bg-orange-400 pl-4 pr-5 py-1.5 text-md font-medium text-white transition-all duration-400 hover:brightness-110 max-[405px]:pl-4 max-[405px]:pr-5 max-[405px]:py-2 max-[405px]:text-sm"
                 >
                   {loading ? (
                     "Sending..."
@@ -211,7 +210,7 @@ export const Contact = () => {
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="mr-1.5 h-4 w-4"
+                        className="mr-2 h-4 w-4"
                         aria-hidden="true"
                         focusable="false"
                       >

@@ -98,7 +98,7 @@ const ProjectCard = ({
         className={`flex flex-col gap-3 ${previewSide === "left" ? "lg:order-2" : "lg:order-1"}`}
       >
         <span className="text-sm font-medium text-muted-foreground mb-0 inline-flex items-center gap-2">
-          <Award className="h-4 w-4 text-orange-500" aria-hidden="true" />
+          <Award className="h-4 w-4 text-orange-400" aria-hidden="true" />
           Featured Project
         </span>
         <h3
@@ -117,10 +117,10 @@ const ProjectCard = ({
               href={demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="demo-button inline-flex items-center font-medium rounded-xl border-1 px-4 py-2 text-base transition-colors duration-400"
+              className="demo-button inline-flex items-center gap-0 font-medium rounded-md pl-4 pr-5 py-1.5 text-base transition-all duration-400"
               itemProp="url"
             >
-              <ArrowUpRight className="mr-1 h-5 w-5" /> Demo
+              <ArrowUpRight className="mr-2 h-5 w-5" /> Demo
             </a>
           )}
           {repoUrl && (
@@ -128,7 +128,7 @@ const ProjectCard = ({
               href={repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-xl border-1 px-4 py-2 text-base transition-colors duration-400"
+              className="inline-flex items-center gap-0 rounded-md border-1 pl-4 pr-5 py-1.5 text-base transition-colors duration-400 hover:bg-black/5 dark:hover:bg-white/5"
               itemProp="sameAs"
             >
               <Github className="mr-2 h-4 w-4" /> Repository
@@ -169,7 +169,7 @@ export const Projects = () => {
     >
       <h2
         id="projects-heading"
-        className="mt-32 text-3xl font-medium sm:text-5xl var(--foreground) text-center tracking-wide"
+        className="mt-32 text-balance text-3xl font-medium tracking-tight sm:text-5xl text-center"
       >
         Projects
       </h2>

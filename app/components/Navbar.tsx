@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { X, Menu } from "lucide-react";
 import { ThemeToggleButton } from "./ThemeToggleButton";
+import { ThemeContext } from "@/context/ThemeContext";
 import "./Navbar.css";
 
 const navigation = [
@@ -16,9 +17,13 @@ const navigation = [
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme } = useContext(ThemeContext);
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full overflow-x-clip transition-transform duration-300">
+    <header
+      key={theme}
+      className="fixed top-0 left-0 z-50 w-full overflow-x-clip transition-transform duration-300"
+    >
       <div className="w-full">
         <nav className="flex items-center justify-between">
           <div className="flex flex-1 lg:hidden">
@@ -39,13 +44,29 @@ export const Navbar = () => {
             <ThemeToggleButton />
           </div>
           <div className="hidden lg:flex lg:w-full lg:justify-center">
-            <div className="relative inline-flex w-full items-center border-b border-border/60 bg-background/75 py-7 shadow-sm backdrop-blur">
+            <div className="relative inline-flex w-full items-center border-b border-border bg-background/75 py-7 backdrop-blur">
               <div className="flex w-full items-center justify-center gap-8">
                 {navigation.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
-                    className="text-lg font-normal tracking-wide text-foreground/75 transition-colors hover:text-foreground"
+                    className="nav-item text-lg font-normal tracking-wide text-foreground/75 transition-colors hover:text-foreground"
+                    onClick={
+                      item.href === "#home"
+                        ? (event) => {
+                            event.preventDefault();
+                          window.scrollTo({ top: 0, behavior: "smooth" });
+                          }
+                        : item.href === "#contact"
+                          ? (event) => {
+                              event.preventDefault();
+                          window.scrollTo({
+                            top: document.documentElement.scrollHeight,
+                            behavior: "smooth",
+                          });
+                            }
+                          : undefined
+                    }
                   >
                     {item.name}
                   </a>
