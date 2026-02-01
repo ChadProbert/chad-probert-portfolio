@@ -94,14 +94,14 @@ export const Contact = () => {
   return (
     <section id="contact" className="">
       <div className="mx-auto max-w-3xl lg:max-w-4xl px-4 sm:px-6">
-        <h2 className="text-balance text-3xl font-medium tracking-tight sm:text-5xl text-center mb-6">
+        <h2 className="text-balance text-3xl font-medium tracking-tight sm:text-5xl text-center mb-4 sm:mb-6">
           Get in Touch
         </h2>
-        <p className="text-center text-base text-muted-foreground sm:text-2xl mb-6">
+        <p className="text-center text-sm text-muted-foreground sm:text-base md:text-lg lg:text-2xl mb-6">
           Let&apos;s build impactful digital experiences.
         </p>
 
-        <div className="relative mt-10 overflow-hidden rounded-2xl border border-border bg-card p-6 sm:p-16">
+        <div className="relative mt-8 sm:mt-10 overflow-hidden rounded-2xl border border-border bg-card p-5 sm:p-8 md:p-12 lg:p-16">
           <BorderBeam
             borderWidth={2}
             size={200}
@@ -173,15 +173,15 @@ export const Contact = () => {
             </div>
 
             <div className="flex flex-col space-y-4 pt-2">
-              <div className="flex items-center justify-end gap-2 flex-wrap max-[500px]:justify-center max-[405px]:gap-2">
+              <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-end sm:gap-2 flex-wrap">
                 <a
                   href="https://www.linkedin.com/in/chad-probert-6421b321b/"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Connect with Chad on LinkedIn"
-                  className="inline-flex items-center rounded-md border pl-4 pr-5 py-1.5 text-md transition-colors duration-400 hover:bg-black/5 dark:hover:bg-white/5 max-[405px]:pl-4 max-[405px]:pr-5 max-[405px]:py-2 max-[405px]:text-sm"
+                  className="inline-flex w-full items-center justify-center rounded-md border px-4 py-2 text-sm transition-colors duration-400 hover:bg-black/5 dark:hover:bg-white/5 sm:w-auto sm:py-1.5 sm:text-md"
                 >
-                  <ArrowUpRight className="mr-2 h-5 w-5 text-[var(--foreground)] max-[405px]:mr-2 max-[405px]:h-4 max-[405px]:w-4" />
+                  <ArrowUpRight className="mr-2 h-4 w-4 text-[var(--foreground)] sm:h-5 sm:w-5" />
                   LinkedIn
                 </a>
                 <a
@@ -189,14 +189,15 @@ export const Contact = () => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Send an email to Chad"
-                  className="inline-flex items-center rounded-md border pl-4 pr-5 py-1.5 text-md transition-colors duration-400 hover:bg-black/5 dark:hover:bg-white/5 max-[405px]:pl-4 max-[405px]:pr-5 max-[405px]:py-2 max-[405px]:text-sm"
+                  className="inline-flex w-full items-center justify-center rounded-md border px-4 py-2 text-sm transition-colors duration-400 hover:bg-black/5 dark:hover:bg-white/5 sm:w-auto sm:py-1.5 sm:text-md"
                 >
-                  <ArrowUpRight className="mr-2 h-5 w-5 text-[var(--foreground)] max-[405px]:mr-2 max-[405px]:h-4 max-[405px]:w-4" />
+                  <ArrowUpRight className="mr-2 h-4 w-4 text-[var(--foreground)] sm:h-5 sm:w-5" />
                   Email
                 </a>
                 <button
+                  id="contact-send-button"
                   type="submit"
-                  className="call-to-action send-cta cursor-pointer inline-flex items-center gap-0 rounded-md bg-orange-400 pl-4 pr-5 py-1.5 text-md font-medium text-white transition-all duration-400 hover:brightness-110 max-[405px]:pl-4 max-[405px]:pr-5 max-[405px]:py-2 max-[405px]:text-sm"
+                  className="call-to-action send-cta cursor-pointer inline-flex w-full items-center justify-center gap-0 rounded-md bg-orange-400 px-4 py-2 text-sm font-medium text-white transition-all duration-400 hover:brightness-110 sm:w-auto sm:py-1.5 sm:text-md"
                 >
                   {loading ? (
                     "Sending..."

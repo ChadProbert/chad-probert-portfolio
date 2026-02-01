@@ -135,36 +135,21 @@ const SKILLS_DARK = [
   },
 ];
 
-// If on mobile remove height and width from skill icons
-if (typeof window !== "undefined") {
-  const { width } = window.screen;
-  if (width < 768) {
-    SKILLS_LIGHT.forEach((skill) => {
-      skill.width = 30;
-      skill.height = 30;
-    });
-    SKILLS_DARK.forEach((skill) => {
-      skill.width = 30;
-      skill.height = 30;
-    });
-  }
-}
-
 export const MarqueeBottom = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
     <div>
-      <Marquee className="flex items-center mx-auto justify-center w-[92%] sm:w-[80%] lg:w-[1000px]">
+      <Marquee className="flex items-center mx-auto justify-center w-full sm:w-full md:w-full lg:w-[1000px]">
         <MarqueeFade side="left" />
         <MarqueeFade side="right" />
         <MarqueeContent direction="right" speed={60}>
           {theme === "light"
             ? SKILLS_LIGHT.map((skill, index) => (
-                <MarqueeItem className="h-16 w-16 lg:h-32 lg:w-32" key={index}>
+                <MarqueeItem className="h-12 w-12 sm:h-14 sm:w-14 md:h-20 md:w-20 lg:h-24 lg:w-24" key={index}>
                   <Image
                     alt={`${skill.name} Icon`}
-                    className="overflow-hidden"
+                    className="h-full w-full object-contain"
                     src={skill.icon}
                     width={skill.width}
                     height={skill.height}
@@ -172,10 +157,10 @@ export const MarqueeBottom = () => {
                 </MarqueeItem>
               ))
             : SKILLS_DARK.map((skill, index) => (
-                <MarqueeItem className="h-16 w-16 lg:h-32 lg:w-32" key={index}>
+                <MarqueeItem className="h-12 w-12 sm:h-14 sm:w-14 md:h-20 md:w-20 lg:h-24 lg:w-24" key={index}>
                   <Image
                     alt={`${skill.name} Icon`}
-                    className="overflow-hidden"
+                    className="h-full w-full object-contain"
                     src={skill.icon}
                     width={skill.width}
                     height={skill.height}

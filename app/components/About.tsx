@@ -59,21 +59,21 @@ export const About = () => {
       <div className="about-container mx-auto w-full px-4 sm:px-6 lg:px-8">
         <div
           ref={cardRef}
-          className="about-card reveal-on-scroll mx-auto mt-12 max-w-6xl rounded-3xl bg-[var(--background)] px-6 py-12 text-center sm:px-12 sm:py-16"
+          className="about-card reveal-on-scroll mx-auto mt-12 max-w-6xl rounded-3xl bg-[var(--background)] px-5 py-10 text-center sm:px-8 sm:py-12 md:px-10 md:py-14 lg:px-12 lg:py-16"
         >
           <header className="flex flex-col items-center gap-4">
             <h2
               id="about-heading"
-              className="mt-20 max-w-3xl text-balance text-3xl font-medium tracking-tight sm:text-5xl"
+              className="mt-10 max-w-3xl text-balance text-3xl font-medium tracking-tight sm:mt-14 md:mt-16 sm:text-4xl md:text-5xl lg:mt-20 lg:text-5xl"
             >
               Shipping immersive digital experiences to users.
             </h2>
-            <p className="max-w-3xl text-balance text-base text-muted-foreground sm:text-lg">
+            <p className="max-w-3xl text-balance text-sm text-muted-foreground sm:text-base md:text-lg">
               I design and ship React/Next.js solutions that are fast, intuitive, and engineered to rank well in search.
             </p>
           </header>
 
-          <div className="about-grid mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="about-grid mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2 md:gap-6 lg:grid-cols-3">
             {highlights.map(({ title, description, Icon }) => (
               <article
                 key={title}

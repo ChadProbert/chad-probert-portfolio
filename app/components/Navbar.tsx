@@ -30,7 +30,7 @@ export const Navbar = () => {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
-              className="inline-flex items-center justify-center rounded-xl border-1 border-neutral-200 bg-background p-3 hover:bg-foreground/5 transition-colors duration-400 hover:cursor-pointer focus:outline-none"
+              className="inline-flex items-center justify-center rounded-xl border-1 border-neutral-200 bg-background p-3 m-1 sm:m-2 md:m-3 hover:bg-foreground/5 transition-colors duration-400 hover:cursor-pointer focus:outline-none"
             >
               <span className="sr-only">Open main menu</span>
               <Menu
@@ -41,7 +41,9 @@ export const Navbar = () => {
             </button>
           </div>
           <div className="flex flex-1 justify-end lg:hidden">
-            <ThemeToggleButton />
+            <div className="rounded-xl border-1 border-neutral-200 bg-background p-1 m-1 sm:m-2 md:m-3">
+              <ThemeToggleButton />
+            </div>
           </div>
           <div className="hidden lg:flex lg:w-full lg:justify-center">
             <div className="relative inline-flex w-full items-center border-b border-border bg-background/75 py-7 backdrop-blur">
@@ -95,7 +97,7 @@ export const Navbar = () => {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
-              className="inline-flex items-center justify-center rounded-xl border-1 border-neutral-200 bg-background p-3 hover:bg-foreground/5 transition-colors duration-400 hover:cursor-pointer focus:outline-none"
+              className="inline-flex items-center justify-center rounded-xl border-1 border-neutral-200 bg-background p-3 m-1 sm:m-2 md:m-3 hover:bg-foreground/5 transition-colors duration-400 hover:cursor-pointer focus:outline-none"
             >
               <span className="sr-only">Close menu</span>
               <X
@@ -114,7 +116,7 @@ export const Navbar = () => {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block px-3 py-2 font-semibold text-3xl"
+                    className="-mx-3 block px-3 py-2 text-2xl font-semibold sm:text-3xl"
                   >
                     {item.name}
                   </a>

@@ -67,7 +67,7 @@ const ProjectCard = ({
 
   return (
     <article
-      className="w-[90%] lg:w-full project-reveal reveal-on-scroll flex flex-col lg:flex-row items-stretch gap-8 lg:gap-20 p-8 lg:p-12 rounded-2xl border bg-card justify-center mx-auto"
+      className="w-[94%] sm:w-[92%] md:w-[95%] lg:w-full project-reveal reveal-on-scroll flex flex-col lg:flex-row items-stretch gap-6 sm:gap-8 md:gap-12 lg:gap-20 p-6 sm:p-8 md:p-10 lg:p-12 rounded-2xl border bg-card justify-center mx-auto"
       itemScope
       itemType="https://schema.org/CreativeWork"
       aria-labelledby={headingId}
@@ -75,7 +75,7 @@ const ProjectCard = ({
       <div
         className={`w-full max-w-md ${previewSide === "left" ? "lg:order-1" : "lg:order-2"}`}
       >
-        <div className="group relative w-full h-44 sm:h-52 md:h-56 lg:h-48 xl:h-56 overflow-hidden bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700">
+        <div className="group relative w-full h-40 sm:h-48 md:h-56 lg:h-48 xl:h-56 overflow-hidden bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700">
           <a
             href={demoUrl ?? repoUrl ?? "#projects"}
             target="_blank"
@@ -108,16 +108,16 @@ const ProjectCard = ({
         >
           {title}
         </h3>
-        <p className="text-base text-muted-foreground mb-2 sm:w-[50%] lg:w-[75%]" itemProp="description">
+        <p className="text-base text-muted-foreground mb-2 md:w-[70%] lg:w-[75%]" itemProp="description">
           {description}
         </p>
-        <div className="mt-2 flex items-center gap-2">
+        <div className="mt-2 flex flex-col items-start gap-2 sm:flex-row sm:items-center">
           {demoUrl && (
             <a
               href={demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="demo-button inline-flex items-center gap-0 font-medium rounded-md pl-4 pr-5 py-1.5 text-base transition-all duration-400"
+              className="demo-button inline-flex w-full items-center justify-center gap-0 rounded-md pl-4 pr-5 py-1.5 text-base font-medium transition-all duration-400 sm:w-auto"
               itemProp="url"
             >
               <ArrowUpRight className="mr-2 h-5 w-5" /> Demo
@@ -128,7 +128,7 @@ const ProjectCard = ({
               href={repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-0 rounded-md border-1 pl-4 pr-5 py-1.5 text-base transition-colors duration-400 hover:bg-black/5 dark:hover:bg-white/5"
+              className="inline-flex w-full items-center justify-center gap-0 rounded-md border-1 pl-4 pr-5 py-1.5 text-base transition-colors duration-400 hover:bg-black/5 dark:hover:bg-white/5 sm:w-auto"
               itemProp="sameAs"
             >
               <Github className="mr-2 h-4 w-4" /> Repository

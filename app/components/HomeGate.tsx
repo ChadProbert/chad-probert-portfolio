@@ -18,13 +18,13 @@ export const HomeGate = ({ topContent, bottomContent }: HomeGateProps) => {
         {isGlobeReady && topContent}
         <section
           aria-hidden="true"
-          className={`relative z-20 mx-auto flex h-[260px] w-full max-w-5xl items-start justify-center overflow-visible px-4 transition-opacity duration-300 sm:h-[320px] sm:px-6 lg:h-[420px] lg:px-8 ${
+          className={`relative z-20 mx-auto flex h-[220px] w-full max-w-5xl items-start justify-center overflow-visible px-4 transition-opacity duration-300 sm:h-[300px] sm:px-6 md:h-[360px] lg:h-[420px] lg:px-8 ${
             isGlobeReady ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         >
           <Globe
             onReady={handleGlobeReady}
-            className="pointer-events-none inset-auto left-1/2 -top-[130px] sm:-top-[170px] lg:-top-[240px] w-[720px] -translate-x-1/2 sm:w-[940px] lg:w-[1300px] opacity-90"
+            className="pointer-events-none inset-auto left-1/2 -top-[110px] sm:-top-[150px] md:-top-[190px] lg:-top-[240px] w-[520px] -translate-x-1/2 sm:w-[720px] md:w-[900px] lg:w-[1300px] opacity-90"
           />
         </section>
         {isGlobeReady && bottomContent}

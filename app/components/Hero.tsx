@@ -14,16 +14,16 @@ export const Hero = () => {
       className="relative isolate"
     >
       <div key={theme} className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div className="hero-surface relative overflow-hidden rounded-3xl px-6 py-12 text-center sm:px-12 sm:py-14 lg:px-16 lg:py-8">
+        <div className="hero-surface relative overflow-hidden rounded-3xl px-5 py-10 text-center sm:px-10 sm:py-12 md:px-12 md:py-14 lg:px-16 lg:py-8">
           <header className="hero-content-ease flex flex-col items-center gap-8">
             <div className="mt-3 space-y-4 sm:mt-5">
               <h1
                 id="home-heading"
-                className="text-balance text-8xl font-medium tracking-tight sm:text-8xl lg:text-8xl"
+                className="text-balance text-5xl font-medium tracking-tight sm:text-6xl md:text-7xl lg:text-8xl"
               >
                 Chad Probert
               </h1>
-              <p className="mt-6 text-balance text-xl font-light tracking-wide text-muted-foreground sm:text-2xl">
+              <p className="mt-6 text-balance text-base font-light tracking-wide text-muted-foreground sm:text-lg md:text-xl lg:text-2xl">
                 Web Developer / Software Developer
               </p>
             </div>
