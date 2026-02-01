@@ -14,17 +14,6 @@ const WHITE: [number, number, number] = [1, 1, 1]
 const DARK_BASE: [number, number, number] = [0.1686, 0.1686, 0.1686]
 const DARK_GLOW: [number, number, number] = [43 / 255, 43 / 255, 43 / 255]
 const ORANGE: [number, number, number] = [251 / 255, 100 / 255, 21 / 255]
-const LAND_MASK_SRC = "/textures/earth-land-dots-mask.png"
-
-const loadImage = (src: string) =>
-  new Promise<HTMLImageElement>((resolve, reject) => {
-    const image = new Image()
-    image.crossOrigin = "anonymous"
-    image.onload = () => resolve(image)
-    image.onerror = () => reject(new Error(`Failed to load image: ${src}`))
-    image.src = src
-  })
-
 const GLOBE_CONFIG: COBEOptions = {
   width: 800,
   height: 800,
@@ -112,7 +101,6 @@ export function Globe({
     onResize()
 
     const initGlobe = async () => {
-      const map = await loadImage(LAND_MASK_SRC).catch(() => null)
       if (cancelled || !canvasRef.current) return
 
       canvasRef.current.style.opacity = "0"
@@ -128,10 +116,6 @@ export function Globe({
           state.width = width * 2
           state.height = width * 2
         },
-      }
-
-      if (map) {
-        options.map = map
       }
 
       globe = createGlobe(canvasRef.current, options)
