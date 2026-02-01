@@ -79,7 +79,7 @@ export const Contact = () => {
       )
       .then(
         () => {
-          setStatus("Message sent successfully! 🎉");
+          setStatus("Message sent successfully!");
           setLoading(false);
           form.reset();
         },
@@ -121,10 +121,10 @@ export const Contact = () => {
           <form onSubmit={sendEmail} className="space-y-5">
             {status && (
               <div
-                className={`justify-center flex p-3 rounded-sm text-lg border-2 ${
-                  status === "Message sent successfully! 🎉"
-                    ? "bg-green-100 border-green-600 text-green-600"
-                    : "bg-red-200 border-red-600 text-red-600"
+                className={`justify-center flex p-3 rounded-sm text-lg border ${
+                  status === "Message sent successfully!"
+                    ? "bg-green-200 text-green-700 border-green-700 dark:bg-green-900/40 dark:text-green-400 dark:border-green-400"
+                    : "bg-red-200 text-red-700 border-red-700 dark:bg-red-900/40 dark:text-red-400 dark:border-red-400"
                 } transition-all`}
               >
                 {status}
