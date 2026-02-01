@@ -18,7 +18,9 @@ export const HomeGate = ({ topContent, bottomContent }: HomeGateProps) => {
         {isGlobeReady && topContent}
         <section
           aria-hidden="true"
-          className="relative z-20 mx-auto flex h-[260px] w-full max-w-5xl items-start justify-center overflow-visible px-4 sm:h-[320px] sm:px-6 lg:h-[420px] lg:px-8"
+          className={`relative z-20 mx-auto flex h-[260px] w-full max-w-5xl items-start justify-center overflow-visible px-4 transition-opacity duration-300 sm:h-[320px] sm:px-6 lg:h-[420px] lg:px-8 ${
+            isGlobeReady ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
         >
           <Globe
             onReady={handleGlobeReady}
