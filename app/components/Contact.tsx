@@ -179,7 +179,7 @@ export const Contact = () => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Connect with Chad on LinkedIn"
-                  className="inline-flex w-full items-center justify-center rounded-md border px-4 py-2 text-sm transition-colors duration-400 hover:bg-black/5 dark:hover:bg-white/5 sm:w-auto sm:py-1.5 sm:text-md"
+                  className="inline-flex w-full items-center justify-center rounded-md border px-4 py-2 text-sm transition-colors duration-400 hover:bg-black/5 dark:hover:bg-white/5 sm:w-auto sm:text-md"
                 >
                   <ArrowUpRight className="mr-2 h-4 w-4 text-[var(--foreground)] sm:h-5 sm:w-5" />
                   LinkedIn
@@ -189,7 +189,7 @@ export const Contact = () => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Send an email to Chad"
-                  className="inline-flex w-full items-center justify-center rounded-md border px-4 py-2 text-sm transition-colors duration-400 hover:bg-black/5 dark:hover:bg-white/5 sm:w-auto sm:py-1.5 sm:text-md"
+                  className="inline-flex w-full items-center justify-center rounded-md border px-4 py-2 text-sm transition-colors duration-400 hover:bg-black/5 dark:hover:bg-white/5 sm:w-auto sm:text-md"
                 >
                   <ArrowUpRight className="mr-2 h-4 w-4 text-[var(--foreground)] sm:h-5 sm:w-5" />
                   Email
@@ -197,7 +197,7 @@ export const Contact = () => {
                 <button
                   id="contact-send-button"
                   type="submit"
-                  className="call-to-action send-cta cursor-pointer inline-flex w-full items-center justify-center gap-0 rounded-md bg-orange-400 px-4 py-2 text-sm font-medium text-white transition-all duration-400 hover:brightness-110 sm:w-auto sm:py-1.5 sm:text-md"
+                  className="call-to-action send-cta cursor-pointer inline-flex w-full items-center justify-center gap-0 rounded-md bg-orange-400 px-4 py-2 text-sm font-medium text-white transition-all duration-400 hover:brightness-110 sm:w-auto sm:text-md"
                 >
                   {loading ? (
                     "Sending..."
