@@ -7,12 +7,23 @@ import { useMotionValue, useSpring } from "motion/react"
 import { cn } from "../lib/utils"
 import { ThemeContext } from "@/context/ThemeContext"
 
-const MOVEMENT_DAMPING = 1400
+const BASE_ROTATION_SPEED = 0.0025
+const START_ROTATION_SPEED = 0.01
 
 const WHITE: [number, number, number] = [1, 1, 1]
-const DARK_BASE: [number, number, number] = [0.08, 0.08, 0.08]
-const DARK_GLOW: [number, number, number] = [0.25, 0.25, 0.25]
+const DARK_BASE: [number, number, number] = [0.1686, 0.1686, 0.1686]
+const DARK_GLOW: [number, number, number] = [43 / 255, 43 / 255, 43 / 255]
 const ORANGE: [number, number, number] = [251 / 255, 100 / 255, 21 / 255]
+const LAND_MASK_SRC = "/textures/earth-land-dots-mask.png"
+
+const loadImage = (src: string) =>
+  new Promise<HTMLImageElement>((resolve, reject) => {
+    const image = new Image()
+    image.crossOrigin = "anonymous"
+    image.onload = () => resolve(image)
+    image.onerror = () => reject(new Error(`Failed to load image: ${src}`))
+    image.src = src
+  })
 
 const GLOBE_CONFIG: COBEOptions = {
   width: 800,
@@ -45,16 +56,17 @@ const GLOBE_CONFIG: COBEOptions = {
 export function Globe({
   className,
   config = GLOBE_CONFIG,
+  onReady,
 }: {
   className?: string
   config?: COBEOptions
+  onReady?: () => void
 }) {
   const { theme } = useContext(ThemeContext)
   let phi = 0
   let width = 0
+  const rotationSpeed = useRef(START_ROTATION_SPEED)
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const pointerInteracting = useRef<number | null>(null)
-  const pointerInteractionMovement = useRef(0)
 
   const r = useMotionValue(0)
   const rs = useSpring(r, {
@@ -67,12 +79,12 @@ export function Globe({
     if (theme === "dark") {
       return {
         ...config,
-        dark: 1,
+        dark: 0.15,
         baseColor: DARK_BASE,
         glowColor: DARK_GLOW,
-        mapBrightness: 3,
-        mapBaseBrightness: 0.1,
-        diffuse: 0.6,
+        mapBrightness: 10,
+        mapBaseBrightness: 0,
+        diffuse: 1.2,
       }
     }
 
@@ -86,22 +98,10 @@ export function Globe({
     }
   }, [config, theme])
 
-  const updatePointerInteraction = (value: number | null) => {
-    pointerInteracting.current = value
-    if (canvasRef.current) {
-      canvasRef.current.style.cursor = value !== null ? "grabbing" : "grab"
-    }
-  }
-
-  const updateMovement = (clientX: number) => {
-    if (pointerInteracting.current !== null) {
-      const delta = clientX - pointerInteracting.current
-      pointerInteractionMovement.current = delta
-      r.set(r.get() + delta / MOVEMENT_DAMPING)
-    }
-  }
-
   useEffect(() => {
+    let globe: ReturnType<typeof createGlobe> | null = null
+    let cancelled = false
+
     const onResize = () => {
       if (canvasRef.current) {
         width = canvasRef.current.offsetWidth
@@ -111,51 +111,59 @@ export function Globe({
     window.addEventListener("resize", onResize)
     onResize()
 
-    const globe = createGlobe(canvasRef.current!, {
-      ...resolvedConfig,
-      width: width * 2,
-      height: width * 2,
-      onRender: (state) => {
-        if (!pointerInteracting.current) phi += 0.0025
-        state.phi = phi + rs.get()
-        state.width = width * 2
-        state.height = width * 2
-      },
-    })
+    const initGlobe = async () => {
+      const map = await loadImage(LAND_MASK_SRC).catch(() => null)
+      if (cancelled || !canvasRef.current) return
 
-    setTimeout(() => (canvasRef.current!.style.opacity = "1"), 0)
+      canvasRef.current.style.opacity = "0"
+
+      const options: COBEOptions & { map?: HTMLImageElement } = {
+        ...resolvedConfig,
+        width: width * 2,
+        height: width * 2,
+        onRender: (state) => {
+          rotationSpeed.current += (BASE_ROTATION_SPEED - rotationSpeed.current) * 0.08
+          phi += rotationSpeed.current
+          state.phi = phi + rs.get()
+          state.width = width * 2
+          state.height = width * 2
+        },
+      }
+
+      if (map) {
+        options.map = map
+      }
+
+      globe = createGlobe(canvasRef.current, options)
+
+      requestAnimationFrame(() => {
+        if (cancelled) return
+        if (canvasRef.current) canvasRef.current.style.opacity = "1"
+        onReady?.()
+      })
+    }
+
+    void initGlobe()
     return () => {
-      globe.destroy()
+      cancelled = true
+      globe?.destroy()
       window.removeEventListener("resize", onResize)
     }
-  }, [rs, resolvedConfig])
+  }, [rs, resolvedConfig, onReady])
 
   return (
     <div
       className={cn(
-        "absolute inset-0 mx-auto aspect-[1/1] w-full max-w-none overflow-hidden",
+        "absolute mx-auto aspect-[1/1] w-full max-w-none overflow-hidden",
         className
       )}
     >
       <canvas
         className={cn(
-          "size-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
+          "pointer-events-none size-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
         )}
+        style={{ transitionTimingFunction: "cubic-bezier(0.2, 0, 0.38, 0.9)" }}
         ref={canvasRef}
-        onPointerDown={(e) => {
-          pointerInteracting.current = e.clientX
-          updatePointerInteraction(e.clientX)
-        }}
-        onPointerUp={() => updatePointerInteraction(null)}
-        onPointerOut={() => updatePointerInteraction(null)}
-        onMouseMove={(e) => updateMovement(e.clientX)}
-        onTouchMove={(e) =>
-          e.touches[0] && updateMovement(e.touches[0].clientX)
-        }
-      />
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-[var(--background)]"
-        aria-hidden="true"
       />
     </div>
   )
